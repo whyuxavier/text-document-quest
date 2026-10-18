@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Місія: Документ — підсумковий тест, 9 клас</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f3ff;--ink:#1f1633;--pri:#6b5bff;--sun:#ffc81a;--ok:#0fa856;--bad:#e63946;--card:#fff;--soft:#ebe8ff;--tag-good:#d4f1e4;--tag-mid:#fff9d6;--tag-bad:#ffe5e7;--acc-1:#4d37c3;--acc-2:#f97316}
+:root[data-theme="dark"]{--bg:#0f0d1a;--ink:#f0edff;--pri:#a89fff;--sun:#ffb81c;--ok:#2dd4a4;--bad:#ff6b75;--card:#1f1a2e;--soft:#2d2642;--tag-good:#1e4d3b;--tag-mid:#4d3f1f;--tag-bad:#4d252a;--acc-1:#c4b5fd;--acc-2:#fb923c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;font-size:17px;line-height:1.5;min-height:100vh;transition:background .3s,color .3s}
+h1,h2,h3{font-family:Unbounded,Onest,sans-serif;margin:0 0 .5em;line-height:1.2;color:var(--ink)}
+h1{color:var(--acc-1)}
+h2{color:var(--pri);border-bottom:3px solid var(--soft);padding-bottom:8px}
+#app{max-width:760px;margin:0 auto;padding:16px 16px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px;font-weight:700}
+.chip{background:var(--sun);color:var(--ink);border:3px solid var(--ink);border-radius:999px;padding:3px 14px;box-shadow:3px 3px 0 var(--ink);font-weight:700}
+.card{background:var(--card);border:3px solid var(--ink);border-radius:20px;box-shadow:6px 6px 0 var(--ink);padding:22px;margin-bottom:18px;transition:box-shadow .3s}
+:root[data-theme="dark"] .card{box-shadow:6px 6px 12px rgba(0,0,0,0.5)}
+.btn{font:700 17px Onest,sans-serif;background:var(--pri);color:#fff;border:3px solid var(--ink);border-radius:14px;padding:10px 20px;box-shadow:4px 4px 0 var(--ink);cursor:pointer;transition:all .2s}
+.btn:hover{transform:translate(-1px,-1px)}.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn.alt{background:var(--sun);color:var(--ink)}.btn:disabled{opacity:.45;cursor:not-allowed}
+:root[data-theme="dark"] .btn{color:#fff;background:var(--pri)}
+:root[data-theme="dark"] .btn.alt{color:var(--ink);background:var(--sun)}
+:focus-visible{outline:4px solid var(--pri);outline-offset:2px}
+input[type=text]{font:inherit;padding:10px 14px;border:3px solid var(--ink);border-radius:12px;width:100%;margin:10px 0 16px;background:var(--card);color:var(--ink)}
+input[type=text]::placeholder{color:var(--soft);opacity:0.7}
+input[type=text]:focus{outline:none;border-color:var(--pri);box-shadow:0 0 0 4px var(--soft)}
+.map{display:grid;gap:12px}
+.mis{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:var(--soft);border:3px solid var(--ink);border-radius:16px;padding:12px 16px;font:inherit;color:inherit;cursor:pointer}
+.mis .ic{font-size:30px;width:48px;text-align:center}
+.mis.done{background:#dcf7e6}.mis.lock{opacity:.5;cursor:not-allowed}.mis.bonus{border-style:dashed;background:#fff6d6}
+.mis small{display:block;font-weight:400}
+.bar{height:18px;background:var(--soft);border:2px solid var(--ink);border-radius:99px;overflow:hidden;box-shadow:inset 0 1px 3px rgba(0,0,0,0.2)}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--acc-1));transition:width .5s;position:relative}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--soft);border:3px solid var(--ink);border-radius:14px;padding:10px 14px;margin:9px 0;cursor:pointer;transition:all .2s}
+.opt:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.opt.sel{background:#d9d4ff;box-shadow:inset 0 0 0 3px var(--pri);border-color:var(--pri)}
+.opt.right{background:var(--tag-good);border-color:var(--ok)}.opt.wrong{background:var(--tag-bad);border-color:var(--bad)}
+.order{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;min-height:48px;padding:8px;border:3px dashed var(--ink);border-radius:14px}
+.order .opt{width:auto;margin:0}
+.fb{padding:12px 14px;border-radius:14px;border:3px solid var(--ink);margin:14px 0;font-weight:600;font-size:16px}
+.fb.ok{background:var(--tag-good);color:var(--ink);border-color:var(--ok)}.fb.no{background:var(--tag-bad);color:var(--ink);border-color:var(--bad)}
+.rep-row{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;margin:14px 0;padding:12px;background:var(--soft);border-radius:14px;border:2px solid transparent}
+.rep-row:hover{border-color:var(--pri)}
+.tag{font-weight:700;border:2px solid var(--ink);border-radius:99px;padding:0 10px;font-size:14px}
+.t-good{background:var(--tag-good);color:var(--ink);border:2px solid var(--ok)}.t-mid{background:var(--tag-mid);color:var(--ink);border:2px solid var(--sun)}.t-bad{background:var(--tag-bad);color:var(--ink);border:2px solid var(--bad)}
+.big{font-family:Unbounded,sans-serif;font-size:52px;font-weight:800;color:var(--pri);text-shadow:2px 2px 4px rgba(0,0,0,0.1)}
+.miss{background:linear-gradient(135deg,var(--soft),transparent);border-left:5px solid var(--bad);border-radius:12px;padding:12px 14px;margin:10px 0;font-size:15px;border:2px solid var(--soft);border-left:5px solid var(--bad)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+ul,ol{margin:12px 0;padding-left:20px}
+li{margin:6px 0;color:var(--ink)}
+p{color:var(--ink);margin:12px 0}
+.icon-btn{background:transparent;border:2px solid var(--ink);border-radius:12px;width:44px;height:44px;padding:0;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:all .2s}
+.icon-btn:hover{transform:scale(1.08);background:var(--soft)}.icon-btn:active{transform:scale(0.95)}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;padding:16px}
+.modal.show{display:flex}
+.modal-content{background:var(--card);border:3px solid var(--ink);border-radius:24px;box-shadow:8px 8px 0 var(--ink);padding:28px;max-width:480px;position:relative;max-height:90vh;overflow-y:auto;color:var(--ink)}
+:root[data-theme="dark"] .modal-content{box-shadow:8px 8px 20px rgba(0,0,0,0.7)}
+.modal-close{position:absolute;top:12px;right:12px;background:transparent;border:2px solid var(--ink);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--soft)}
+.modal h2{margin-top:0}
+.modal a{color:var(--acc-1);background:var(--soft);border-color:var(--acc-1)}
+:root[data-theme="dark"] .modal a{color:var(--acc-1);background:#3d354d;border-color:var(--acc-1)}
+@media print{.noprint{display:none!important}body{background:#fff}.card{box-shadow:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="modal" class="modal">
+ <div class="modal-content">
+  <button class="modal-close" id="modal-close">✕</button>
+  <h2>Про сайт</h2>
+  <p>Цей інтерактивний тест розроблений <b>вчителем Олександром Васильовичем Мрочком</b> для учнів 9 класу.</p>
+  <p>Місії допомагають повторити тему «Опрацювання текстових даних»: списки, формули, символи, стовпці, розділи, колонтитули й зміст документа.</p>
+  <p style="margin-top:20px"><b>Посилання:</b><br><a href="https://github.com/whyuxavier" target="_blank" style="text-decoration:none;font-weight:700;display:inline-block;padding:6px 10px;border-radius:8px;margin-top:8px;border:2px solid">github.com/whyuxavier</a></p>
+  <p style="font-size:14px;color:var(--soft);margin-top:20px;opacity:0.7">© 2026 · Тест розроблено для ІТ-студії</p>
+ </div>
+</div>
+<script>
+// Ініціалізація теми
+const initTheme=()=>{const saved=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',saved);updateThemeBtn()};
+const toggleTheme=()=>{const cur=document.documentElement.getAttribute('data-theme')||'light';const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);updateThemeBtn()};
+const updateThemeBtn=()=>{const cur=document.documentElement.getAttribute('data-theme')||'light';const btn=$('#theme-btn');if(btn)btn.textContent=cur==='dark'?'☀️':'🌙'};
+
+// Модальне вікно
+const showModal=()=>{const m=$('#modal');if(m)m.classList.add('show')};
+const hideModal=()=>{const m=$('#modal');if(m)m.classList.remove('show')};
+const initModal=()=>{const closeBtn=$('#modal-close'),modal=$('#modal');if(closeBtn)closeBtn.onclick=hideModal;if(modal)modal.onclick=e=>{if(e.target===modal)hideModal()}};
+setTimeout(initModal,0);
+
+const M=[
+{ic:'🛰️',n:'Зв’язок із центром',topic:'Системи опрацювання текстів',tip:'Повторіть, які бувають текстові редактори й процесори (Блокнот, Word, Google Документи) і чим вони відрізняються.',q:[
+ {t:'s',q:'Яка програма працює в браузері й дозволяє кільком людям одночасно редагувати один документ?',o:['Блокнот','Google Документи','Paint','Калькулятор'],a:1,e:'Google Документи — онлайн-процесор зі спільним доступом.'},
+ {t:'s',q:'Яке розширення має файл сучасного документа Word?',o:['.txt','.docx','.xlsx','.pptx'],a:1,e:'.docx — документ Word. .xlsx — таблиця Excel, .pptx — презентація.'},
+ {t:'m',q:'Що вміє текстовий процесор, але НЕ вміє простий Блокнот? (оберіть усі правильні)',o:['Змінювати шрифт і розмір тексту','Вставляти таблиці й зображення','Зберігати текст у файлі','Створювати колонтитули'],a:[0,1,3],e:'Зберігати текст уміє й Блокнот, а от форматування, об’єкти та колонтитули — тільки текстові процесори.'}]},
+{ic:'🧩',n:'Шифр зі списків',topic:'Багаторівневі списки',tip:'Потренуйтеся створювати багаторівневі списки: Tab для підрівня, Shift+Tab для повернення, вибір стилю нумерації.',q:[
+ {t:'s',q:'Як у багаторівневому списку зробити пункт підпунктом?',o:['Натиснути Enter двічі','Поставити курсор у пункт і натиснути Tab','Натиснути Caps Lock','Змінити шрифт'],a:1,e:'Tab збільшує рівень (відступ), Shift+Tab повертає на рівень вище.'},
+ {t:'s',q:'Який список краще обрати для кроків інструкції, де важливий порядок дій?',o:['Маркований','Нумерований','Без списку','Багатоколонковий'],a:1,e:'Нумерація показує послідовність. Маркери — коли порядок неважливий.'},
+ {t:'o',q:'Розташуйте дії для створення багаторівневого списку у правильному порядку:',o:['Набрати пункти списку, кожен з нового рядка','Виділити ці пункти','Обрати «Багаторівневий список» на вкладці «Основне»','Для підпунктів натиснути Tab'],e:'Спочатку текст, потім виділення, вибір типу списку й налаштування рівнів.'}]},
+{ic:'∑',n:'Секретні символи',topic:'Спеціальні символи і формули',tip:'Повторіть вставлення символів (Вставлення → Символ) та редактор формул (Alt + =).',q:[
+ {t:'s',q:'Як вставити символ ©, якого немає на клавіатурі?',o:['Вставлення → Символ','Основне → Шрифт','Макет → Поля','Рецензування → Орфографія'],a:0,e:'Вкладка «Вставлення» → «Символ» відкриває таблицю спеціальних символів.'},
+ {t:'s',q:'Де в Word створюється математична формула?',o:['Вставлення → Формула','Конструктор → Тема','Вигляд → Масштаб','Файл → Друк'],a:0,e:'Вставлення → Формула (або Alt + =) відкриває редактор формул.'},
+ {t:'m',q:'Які з цих знаків є спеціальними символами? (оберіть усі правильні)',o:['©','≈','abc','€'],a:[0,1,3],e:'©, ≈ і € вставляють через таблицю символів, а abc — звичайні літери.'}]},
+{ic:'📰',n:'Колонки та розділи',topic:'Стовпці та розділи',tip:'Повторіть: Макет → Стовпці та різні види розривів розділу (безперервний, з наступної сторінки).',q:[
+ {t:'s',q:'Де знаходиться команда «Стовпці» для розбиття тексту на колонки?',o:['Вкладка «Макет» (Розмітка сторінки)','Вкладка «Рецензування»','Вкладка «Вигляд»','Вкладка «Файл»'],a:0,e:'Макет → Стовпці: обираєте 2, 3 або власну кількість колонок.'},
+ {t:'s',q:'Потрібно, щоб на одній сторінці заголовок був в одній колонці, а текст під ним — у двох. Що зробити?',o:['Вставити таблицю','Вставити безперервний розрив розділу й лише для другого розділу задати два стовпці','Зменшити шрифт','Зробити два файли'],a:1,e:'Кожен розділ має власні налаштування стовпців. Безперервний розрив лишає їх на одній сторінці.'},
+ {t:'s',q:'Для чого потрібен розрив розділу «Наступна сторінка»?',o:['Щоб видалити текст','Щоб новий розділ починався з нової сторінки і мав власні параметри (орієнтація, колонтитули)','Щоб збільшити шрифт','Щоб додати малюнок'],a:1,e:'Такий розрив створює новий розділ з нової сторінки — зручно змінити орієнтацію чи колонтитули.'}]},
+{ic:'🔖',n:'Верх і низ сторінки',topic:'Колонтитули',tip:'Повторіть: двічі клацнути в полі сторінки, номер сторінки, особливий колонтитул першої сторінки.',q:[
+ {t:'s',q:'Що таке колонтитул?',o:['Заголовок першого рівня','Текст чи об’єкт у верхньому або нижньому полі, що повторюється на сторінках','Вид списку','Тип розриву'],a:1,e:'Колонтитул — повторювана інформація у верхньому чи нижньому полі: назва, автор, номер сторінки.'},
+ {t:'s',q:'Як додати нумерацію сторінок?',o:['Вставлення → Номер сторінки','Макет → Орієнтація','Основне → Маркери','Вигляд → Лінійка'],a:0,e:'Вставлення → Номер сторінки (угорі, внизу, на полях).'},
+ {t:'s',q:'Як зробити, щоб на титульній сторінці не було колонтитула?',o:['Видалити титульну сторінку','Увімкнути «Особливий колонтитул для першої сторінки»','Змінити колір тексту на білий','Вставити розрив рядка'],a:1,e:'У вкладці «Колонтитули» (Конструктор) є прапорець «Особливий колонтитул для першої сторінки».'}]},
+{ic:'🗺️',n:'Бонус: карта змісту',bonus:1,topic:'Зміст документа',tip:'Повторіть: заголовки зі стилями «Заголовок 1/2», Посилання → Зміст, оновлення змісту після правок.',q:[
+ {t:'s',q:'Що потрібно зробити із заголовками, щоб Word міг автоматично створити зміст?',o:['Зробити їх жирними','Застосувати стилі «Заголовок 1», «Заголовок 2» тощо','Написати їх великими літерами','Підкреслити'],a:1,e:'Автозміст будується за стилями заголовків. Просто жирний текст Word заголовком не вважає.'},
+ {t:'s',q:'Де знаходиться команда «Зміст»?',o:['Вкладка «Посилання» → Зміст','Вкладка «Вставлення» → Таблиця','Вкладка «Вигляд» → Масштаб','Вкладка «Рецензування» → Коментар'],a:0,e:'Посилання → Зміст — готові стилі та «Настроюваний зміст».'},
+ {t:'o',q:'Розташуйте дії для створення змісту у правильному порядку:',o:['Оформити заголовки стилями «Заголовок 1/2»','Поставити курсор у місце, де буде зміст','Посилання → Зміст і обрати вигляд','Після правок документа натиснути «Оновити таблицю»'],e:'Спочатку структура (стилі), потім вставлення змісту, а після змін — оновлення.'},
+ {t:'m',q:'Що з цього можна зробити зі змістом після вставлення в документ? (оберіть усі правильні)',o:['Видалити і створити нову версію','Змінити його вигляд через інші стилі','Оновити його, щоб урахунок нові заголовки','Автоматично видаляти при збереженні документа'],a:[0,1,2],e:'Зміст легко видалити й вставити заново, змінити його оформлення через стилі й оновити при правках. Він не видаляється сам.'}]}
+];
+const $=s=>document.querySelector(s),app=$('#app');
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+let S={name:'',xp:0,streak:0,best:0,done:[],res:[],cur:0,qi:0,miss:[]};
+
+function header(){setTimeout(updateThemeBtn,0);return `<div class="top"><span>🚀 ${esc(S.name)}</span><span class="chip">⭐ ${S.xp} XP</span><div style="display:flex;gap:6px"><button class="icon-btn" id="theme-btn" title="Перемкнути тему" onclick="toggleTheme()">🌙</button><button class="icon-btn" id="info-btn" title="Про сайт" onclick="showModal()">ℹ️</button></div></div>`}
+
+function start(){
+ app.innerHTML=`<div class="card"><h1>Місія: Документ</h1>
+ <p>Ти — агент, якому треба врятувати зіпсовані документи. У кожній місії — три завдання з пройденого розділу «Опрацювання текстових даних». Остання місія — бонусна, про зміст.</p>
+ <p>Наприкінці отримаєш звіт: що ти знаєш найкраще, а що варто повторити.</p>
+ <label for="nm"><b>Твоє ім’я та клас:</b></label>
+ <input id="nm" type="text" maxlength="40" placeholder="Наприклад: Олена, 9-А">
+ <button class="btn" id="go">Почати місії</button></div>`;
+ const go=()=>{S.name=$('#nm').value.trim();if(!S.name){$('#nm').focus();return}map()};
+ $('#go').onclick=go;$('#nm').onkeydown=e=>{if(e.key==='Enter')go()};
+}
+
+function map(){
+ const n=S.done.length,all=n===M.length;
+ app.innerHTML=header()+`<div class="card"><h2>Карта місій</h2>
+ <div class="bar" aria-label="Прогрес"><i style="width:${n/M.length*100}%"></i></div>
+ <p>Виконано місій: <b>${n}</b> із ${M.length}</p><div class="map">`+
+ M.map((m,i)=>{const d=S.done.includes(i),lock=!d&&i>S.done.length;
+  const r=S.res[i];
+  return `<button class="mis ${d?'done':''} ${lock?'lock':''} ${m.bonus?'bonus':''}" data-i="${i}" ${lock||d?'disabled':''}><span class="ic">${d?'✅':lock?'🔒':m.ic}</span><span><b>${m.bonus?'Бонус: ':'Місія '+(i+1)+': '}${m.n}</b><small>${d?'Результат: '+r.c+' із '+r.t:m.topic}</small></span></button>`}).join('')+
+ `</div>${all?'<p style="margin-top:18px"><button class="btn alt" id="rep">Отримати звіт</button></p>':''}</div>`;
+ document.querySelectorAll('.mis').forEach(b=>b.onclick=()=>{S.cur=+b.dataset.i;S.qi=0;S.res[S.cur]={c:0,t:M[S.cur].q.length};question()});
+ if(all)$('#rep').onclick=report;
+}
+
+function question(){
+ const m=M[S.cur],q=m.q[S.qi];let sel=[],checked=false;
+ let items=sh(q.o.map((t,i)=>({t,i}))); // for order: i = correct position
+ const head=header()+`<div class="card"><p style="margin:0 0 6px"><b>${m.ic} ${m.n}</b> · завдання ${S.qi+1} із ${m.q.length}</p>
+ <div class="bar"><i style="width:${S.qi/m.q.length*100}%"></i></div><h3 style="margin-top:16px;font-size:20px">${esc(q.q)}</h3>
+ ${q.t==='m'?'<p><i>Можливо кілька відповідей.</i></p>':''}${q.t==='o'?'<p><i>Натискай на кроки по черзі. Натисни на крок у відповіді, щоб прибрати його.</i></p>':''}
+ <div id="body"></div><div id="fb"></div><div class="row" id="acts"></div></div>`;
+ app.innerHTML=head;
+ const body=$('#body'),acts=$('#acts');
+ function draw(){
+  if(q.t==='o'){
+   const pool=items.filter(x=>!sel.includes(x.i));
+   body.innerHTML=`<div class="order" id="ans">${sel.map(i=>`<button class="opt" data-r="${i}">${esc(q.o[i])}</button>`).join('')||'<span>Тут буде твоя відповідь</span>'}</div>
+   <div>${pool.map(x=>`<button class="opt" data-a="${x.i}">${esc(x.t)}</button>`).join('')}</div>`;
+   body.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{if(checked)return;sel.push(+b.dataset.a);draw()});
+   body.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{if(checked)return;sel=sel.filter(x=>x!==+b.dataset.r);draw()});
+   $('#chk').disabled=sel.length!==q.o.length;
+  }else{
+   body.innerHTML=items.map(x=>`<button class="opt ${sel.includes(x.i)?'sel':''}" data-i="${x.i}" aria-pressed="${sel.includes(x.i)}">${esc(x.t)}</button>`).join('');
+   body.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(checked)return;const i=+b.dataset.i;
+    if(q.t==='s')sel=[i];else sel=sel.includes(i)?sel.filter(x=>x!==i):sel.concat(i);draw()});
+   $('#chk').disabled=!sel.length;
+  }
+ }
+ acts.innerHTML='<button class="btn" id="chk">Перевірити</button>';
+ draw();
+ $('#chk').onclick=()=>{
+  checked=true;let ok;
+  if(q.t==='o')ok=sel.every((v,k)=>v===k);
+  else if(q.t==='s')ok=sel[0]===q.a;
+  else ok=sel.length===q.a.length&&q.a.every(x=>sel.includes(x));
+  if(q.t!=='o'){const corr=q.t==='s'?[q.a]:q.a;
+   body.querySelectorAll('.opt').forEach(b=>{const i=+b.dataset.i;if(corr.includes(i))b.classList.add('right');else if(sel.includes(i))b.classList.add('wrong')})}
+  else{body.innerHTML=`<p><b>Правильний порядок:</b></p><ol>${q.o.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`}
+  let gain=0;
+  if(ok){S.streak++;S.best=Math.max(S.best,S.streak);gain=100+Math.min(S.streak-1,5)*20;S.xp+=gain;S.res[S.cur].c++}
+  else{S.streak=0;S.miss.push({m:S.cur,q:q.q,e:q.e})}
+  $('#fb').innerHTML=`<div class="fb ${ok?'ok':'no'}">${ok?`Вірно! +${gain} XP${S.streak>1?' · серія '+S.streak+' 🔥':''}`:'Не зовсім.'} ${esc(q.e)}</div>`;
+  const last=S.qi===m.q.length-1;
+  acts.innerHTML=`<button class="btn" id="nx">${last?'Завершити місію':'Далі'}</button>`;
+  $('#nx').focus();
+  $('#nx').onclick=()=>{if(last){S.done.push(S.cur);missionEnd()}else{S.qi++;question()}};
+ };
+}
+
+function missionEnd(){
+ const r=S.res[S.cur],ok=r.c===r.t;
+ app.innerHTML=header()+`<div class="card" style="text-align:center"><div class="big">${r.c}/${r.t}</div>
+ <h2>${ok?'Місію виконано бездоганно!':r.c>=r.t/2?'Місію виконано!':'Місію завершено — є над чим попрацювати'}</h2>
+ <p>${M[S.cur].n}</p><button class="btn" id="b">${S.done.length===M.length?'До звіту':'На карту місій'}</button></div>`;
+ $('#b').onclick=()=>S.done.length===M.length?report():map();
+}
+
+function lvl(p){return p>=80?['t-good','Засвоєно добре']:p>=50?['t-mid','Потрібне повторення']:['t-bad','Варто повторити']}
+
+function report(){
+ const tot=S.res.reduce((a,r)=>a+r.c,0),all=S.res.reduce((a,r)=>a+r.t,0),p=Math.round(tot/all*100);
+ const rank=p>=90?'Легенда документів 🏆':p>=70?'Старший агент 🎖️':p>=50?'Агент-практик 🛠️':'Курсант 🌱';
+ const rows=M.map((m,i)=>({m,i,p:Math.round(S.res[i].c/S.res[i].t*100)}));
+ const sorted=rows.slice().sort((a,b)=>b.p-a.p);
+ const weak=rows.filter(x=>x.p<80);
+ app.innerHTML=header()+`<div class="card"><h1>Звіт агента</h1>
+ <p><b>${esc(S.name)}</b> · ${new Date().toLocaleDateString('uk-UA')}</p>
+ <div class="big">${p}%</div><p>Правильних відповідей: <b>${tot} із ${all}</b> · Ранг: <b>${rank}</b> · Найдовша серія: <b>${S.best}</b> · <b>${S.xp} XP</b></p></div>
+ <div class="card"><h2>Теми за результатами</h2>`+
+ rows.map(x=>{const l=lvl(x.p);return `<div class="rep-row"><span style="font-size:24px">${x.m.ic}</span><div><b>${x.m.topic}</b><div class="bar" style="margin-top:4px"><i style="width:${x.p}%;background:${x.p>=80?'var(--ok)':x.p>=50?'var(--sun)':'var(--bad)'}"></i></div></div><span class="tag ${l[0]}">${x.p}% · ${l[1]}</span></div>`}).join('')+`</div>
+ <div class="card"><h2>Підсумок</h2>
+ <p>💪 <b>Найкраще засвоєно:</b> ${sorted.filter(x=>x.p===sorted[0].p).map(x=>x.m.topic).join(', ')} (${sorted[0].p}%).</p>
+ ${weak.length?`<p>🔁 <b>Що повторити:</b></p><ul>${weak.sort((a,b)=>a.p-b.p).map(x=>`<li><b>${x.m.topic}</b> — ${x.m.tip}</li>`).join('')}</ul>`:'<p>🎉 Усі теми засвоєно добре — так тримати!</p>'}
+ ${S.miss.length?`<h3 style="margin-top:20px;font-size:18px">Розбір помилок</h3>`+S.miss.map(x=>`<div class="miss"><b>${esc(x.q)}</b><br>${esc(x.e)}</div>`).join(''):''}</div>
+ <div class="row noprint"><button class="btn" id="cp">Скопіювати звіт</button><button class="btn alt" id="pr">Роздрукувати</button><button class="btn alt" id="rs">Пройти знову</button></div><p id="cm" class="noprint"></p>`;
+ const txt=`Звіт: ${S.name}\nРезультат: ${tot} із ${all} (${p}%), ранг: ${rank}\n`+rows.map(x=>`- ${x.m.topic}: ${x.p}% (${lvl(x.p)[1]})`).join('\n')+(weak.length?'\nПовторити: '+weak.map(x=>x.m.topic).join(', '):'');
+ $('#cp').onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(()=>$('#cm').textContent='Звіт скопійовано — надішли його вчителю.').catch(()=>$('#cm').textContent='Не вдалося скопіювати. Зроби знімок екрана.')};
+ $('#pr').onclick=()=>window.print();
+ $('#rs').onclick=()=>{S={name:'',xp:0,streak:0,best:0,done:[],res:[],cur:0,qi:0,miss:[]};start()};
+}
+initTheme();
+start();
+</script>
+</body>
+</html>
