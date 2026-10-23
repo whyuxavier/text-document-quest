@@ -3,191 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Місія: Документ — підсумковий тест, 9 клас</title>
-<!-- SVG Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2318181b'/><text x='50%' y='68%' font-family='sans-serif' font-weight='800' font-size='50' fill='%23ffffff' text-anchor='middle'>📄</text></svg>">
-
-<!-- Tailwind CSS -->
+<title>Текстовий Форматор — підсумок розділу 2, 9 клас</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2318181b'/><text x='50%' y='68%' font-family='sans-serif' font-weight='800' font-size='50' fill='%23ffffff'>📝</text></svg>">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-        }
-      }
-    }
-  }
-</script>
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #fcfcfc;
-    color: #18181b;
-    touch-action: manipulation;
-  }
-
-  .glass-header {
-    background: rgba(252, 252, 252, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  .clean-card {
-    background: #ffffff;
-    border: 1px solid #e4e4e7;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: all 0.2s ease;
-  }
-
-  .btn-action {
-    background: #18181b;
-    color: #ffffff;
-    font-weight: 600;
-    border-radius: 12px;
-    transition: all 0.15s ease;
-  }
-  .btn-action:hover {
-    background: #27272a;
-  }
-
-  .btn-alt {
-    background: #f4f4f5;
-    border: 1px solid #e4e4e7;
-    color: #27272a;
-    font-weight: 600;
-    border-radius: 12px;
-    transition: all 0.15s ease;
-  }
-  .btn-alt:hover {
-    background: #e4e4e7;
-  }
-
-  .opt-btn {
-    width: 100%;
-    text-align: left;
-    background: #f4f4f5;
-    border: 1px solid #e4e4e7;
-    border-radius: 12px;
-    padding: 12px 16px;
-    margin: 6px 0;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #27272a;
-    transition: all 0.15s ease;
-  }
-  .opt-btn:hover {
-    background: #e4e4e7;
-    border-color: #d4d4d8;
-  }
-  .opt-btn.sel {
-    background: #18181b;
-    color: #ffffff;
-    border-color: #18181b;
-  }
-  .opt-btn.right {
-    background: #ecfdf5;
-    border-color: #10b981;
-    color: #047857;
-    font-weight: 600;
-  }
-  .opt-btn.wrong {
-    background: #fef2f2;
-    border-color: #ef4444;
-    color: #b91c1c;
-    font-weight: 600;
-  }
-
-  .bar-bg {
-    height: 8px;
-    background: #e4e4e7;
-    border-radius: 99px;
-    overflow: hidden;
-  }
-  .bar-fill {
-    height: 100%;
-    background: #10b981;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  @media print {
-    .noprint { display: none !important; }
-    body { background: #fff; }
-    .clean-card { box-shadow: none; border: 1px solid #ccc; }
-  }
+  body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #18181b; touch-action: manipulation; }
+  .glass-header { background: rgba(252, 252, 252, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .clean-card { background: #ffffff; border: 1px solid #e4e4e7; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); transition: all 0.2s ease; }
+  .btn-action { background: #18181b; color: #ffffff; font-weight: 600; border-radius: 12px; transition: all 0.15s ease; }
+  .btn-action:hover { background: #27272a; }
+  .btn-alt { background: #f4f4f5; border: 1px solid #e4e4e7; color: #27272a; font-weight: 600; border-radius: 12px; transition: all 0.15s ease; }
+  .btn-alt:hover { background: #e4e4e7; }
+  .opt-btn { width: 100%; text-align: left; background: #f4f4f5; border: 1px solid #e4e4e7; border-radius: 12px; padding: 12px 16px; margin: 6px 0; font-size: 0.95rem; font-weight: 500; color: #27272a; transition: all 0.15s ease; }
+  .opt-btn:hover { background: #e4e4e7; border-color: #d4d4d8; }
+  .opt-btn.sel { background: #18181b; color: #ffffff; border-color: #18181b; }
+  .opt-btn.right { background: #ecfdf5; border-color: #10b981; color: #047857; font-weight: 600; }
+  .opt-btn.wrong { background: #fef2f2; border-color: #ef4444; color: #b91c1c; font-weight: 600; }
+  .bar-bg { height: 8px; background: #e4e4e7; border-radius: 99px; overflow: hidden; }
+  .bar-fill { height: 100%; background: #10b981; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+  input[type="text"] { width: 100%; padding: 8px 12px; border: 1px solid #e4e4e7; border-radius: 8px; font-size: 0.9rem; transition: all 0.15s ease; }
+  input[type="text"]:focus { outline: none; border-color: #18181b; background: #f9f9f9; }
+  @media print { .noprint { display: none !important; } body { background: #fff; } .clean-card { box-shadow: none; border: 1px solid #ccc; } }
 </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-zinc-900 selection:text-white pb-6">
-
-  <!-- HEADER -->
   <header class="sticky top-0 z-40 glass-header border-b border-zinc-200/80">
     <div class="max-w-3xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-zinc-900 text-white flex items-center justify-center text-sm font-bold shadow-sm">
-          📄
-        </div>
-        <span class="font-bold tracking-tight text-zinc-900 text-base sm:text-lg">
-          Місія: Документ
-        </span>
+        <div class="w-8 h-8 rounded-lg bg-zinc-900 text-white flex items-center justify-center text-sm font-bold shadow-sm">📝</div>
+        <span class="font-bold tracking-tight text-zinc-900 text-base sm:text-lg">Текстовий Форматор</span>
       </a>
-
-      <div class="flex items-center gap-2">
-        <button id="info-btn" onclick="showModal()" title="Про сайт" aria-label="Про сайт"
-                class="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 flex items-center justify-center text-zinc-800 font-serif italic text-sm font-bold transition-all shadow-sm">
-          i
-        </button>
-      </div>
+      <button id="info-btn" onclick="showModal()" title="Про сайт" class="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 flex items-center justify-center text-zinc-800 font-serif italic text-sm font-bold transition-all shadow-sm">i</button>
     </div>
   </header>
 
-  <!-- MAIN APP CONTAINER -->
   <main class="max-w-3xl mx-auto px-4 py-6 flex-grow w-full">
     <div id="app"></div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="border-t border-zinc-200/70 py-4 bg-zinc-50/50 mt-auto noprint">
-    <div class="max-w-3xl mx-auto px-4 text-center text-xs text-zinc-400">
-      &copy; <span id="year"></span> whyuxavier. Навчальний тест для 9 класу.
-    </div>
+    <div class="max-w-3xl mx-auto px-4 text-center text-xs text-zinc-400">&copy; <span id="year"></span> whyuxavier. Навчальний тест для 9 класу.</div>
   </footer>
 
-  <!-- MODAL [i] -->
   <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200">
     <div class="bg-white border border-zinc-200 rounded-2xl max-w-sm w-full p-6 shadow-xl relative">
-      <button onclick="hideModal()" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-500 hover:text-zinc-900 flex items-center justify-center text-xs">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
+      <button onclick="hideModal()" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-500 hover:text-zinc-900 flex items-center justify-center text-xs"><i class="fa-solid fa-xmark"></i></button>
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-9 h-9 rounded-xl bg-zinc-900 text-white flex items-center justify-center text-base font-bold">
-          📄
-        </div>
+        <div class="w-9 h-9 rounded-xl bg-zinc-900 text-white flex items-center justify-center text-base font-bold">📝</div>
         <div>
           <h3 class="text-base font-bold text-zinc-900">Про тест</h3>
-          <p class="text-xs text-zinc-400">9 клас — Текстові дані</p>
+          <p class="text-xs text-zinc-400">9 клас · Розділ 2</p>
         </div>
       </div>
-
       <div class="space-y-3 text-xs text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
-        <p>Інтерактивний тест розроблений <b>вчителем Олександром Васильовичем Мрочком</b> для учнів 9 класу.</p>
-        <p>Місії допомагають повторити тему «Опрацювання текстових даних»: списки, формули, символи, стовпці, розділи, колонтитули й зміст документа.</p>
-        <div class="pt-2">
-          <a href="https://github.com/whyuxavier" target="_blank" rel="noopener noreferrer"
-             class="flex items-center justify-between w-full px-3 py-2 rounded-xl bg-zinc-900 text-white font-semibold transition-all">
-            <span><i class="fa-brands fa-github mr-1.5"></i> GitHub Профіль</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-          </a>
-        </div>
+        <p>Підсумковий тест розроблений <b>вчителем Олександром Васильовичем Мрочком</b> для повторення опрацювання текстових даних.</p>
+        <p>Випробуйте свої знання про форматування документів, списки, символи, стовпці й колонтитули.</p>
+        <a href="https://github.com/whyuxavier" target="_blank" class="flex items-center justify-between w-full px-3 py-2 rounded-xl bg-zinc-900 text-white font-semibold transition-all">
+          <span><i class="fa-brands fa-github mr-1.5"></i> GitHub</span><i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -197,46 +74,70 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 const sh = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-// Modal Logic
 const showModal = () => { const m = $('#modal'); if (m) { m.classList.remove('hidden'); setTimeout(() => m.classList.remove('opacity-0'), 10); } };
 const hideModal = () => { const m = $('#modal'); if (m) { m.classList.add('opacity-0'); setTimeout(() => m.classList.add('hidden'), 200); } };
 $('#modal').onclick = e => { if (e.target === $('#modal')) hideModal(); };
 
 const M = [
-  { ic: '🛰️', n: 'Зв’язок із центром', topic: 'Системи опрацювання текстів', tip: 'Повторіть, які бувають текстові редактори й процесори (Блокнот, Word, Google Документи) і чим вони відрізняються.', q: [
-    { t: 's', q: 'Яка програма працює в браузері й дозволяє кільком людям одночасно редагувати один документ?', o: ['Блокнот', 'Google Документи', 'Paint', 'Калькулятор'], a: 1, e: 'Google Документи — онлайн-процесор зі спільним доступом.' },
-    { t: 's', q: 'Яке розширення має файл сучасного документа Word?', o: ['.txt', '.docx', '.xlsx', '.pptx'], a: 1, e: '.docx — документ Word. .xlsx — таблиця Excel, .pptx — презентація.' },
-    { t: 'm', q: 'Що вміє текстовий процесор, але НЕ вміє простий Блокнот? (оберіть усі правильні)', o: ['Змінювати шрифт і розмір тексту', 'Вставляти таблиці й зображення', 'Зберігати текст у файлі', 'Створювати колонтитули'], a: [0, 1, 3], e: 'Зберігати текст уміє й Блокнот, а от форматування, об’єкти та колонтитули — тільки текстові процесори.' }
+  { ic: '🛰️', n: 'Системи обробки', topic: 'Текстові редактори й процесори', q: [
+    { t: 's', q: 'Яка програма працює в браузері й дозволяє спільне редагування?', o: ['Блокнот', 'Google Документи', 'Paint', 'Excel'], a: 1, e: 'Google Документи — онлайн-процесор.' },
+    { t: 's', q: 'Яке розширення має файл Word?', o: ['.txt', '.docx', '.pdf', '.xlsx'], a: 1, e: '.docx — документ Word.' },
+    { t: 'a', q: 'Напишіть назву однієї програми для роботи з текстом (не браузер):', hint: 'Наприклад: Word, Блокнот, LibreOffice', ans: ['word', 'блокнот', 'notepad', 'libreoffice'], e: 'Word, Google Документи, Блокнот, LibreOffice — усе правильно.' },
   ]},
-  { ic: '🧩', n: 'Шифр зі списків', topic: 'Багаторівневі списки', tip: 'Потренуйтеся створювати багаторівневі списки: Tab для підрівня, Shift+Tab для повернення, вибір стилю нумерації.', q: [
-    { t: 's', q: 'Як у багаторівневому списку зробити пункт підпунктом?', o: ['Натиснути Enter двічі', 'Поставити курсор у пункт і натиснути Tab', 'Натиснути Caps Lock', 'Змінити шрифт'], a: 1, e: 'Tab збільшує рівень (відступ), Shift+Tab повертає на рівень вище.' },
-    { t: 's', q: 'Який список краще обрати для кроків інструкції, де важливий порядок дій?', o: ['Маркований', 'Нумерований', 'Без списку', 'Багаторівневий'], a: 1, e: 'Нумерація показує послідовність. Маркери — коли порядок неважливий.' },
-    { t: 'o', q: 'Розташуйте дії для створення багаторівневого списку у правильному порядку:', o: ['Набрати пункти списку, кожен з нового рядка', 'Виділити ці пункти', 'Обрати «Багаторівневий список» на вкладці «Основне»', 'Для підпунктів натиснути Tab'], e: 'Спочатку текст, потім виділення, вибір типу списку й налаштування рівнів.' }
+  { ic: '🧩', n: 'Багаторівневі списки', topic: 'Структурування списків', q: [
+    { t: 's', q: 'Як зробити пункт підпунктом у списку?', o: ['Enter', 'Tab', 'Space', 'Delete'], a: 1, e: 'Tab збільшує рівень (відступ).' },
+    { t: 'm', q: 'Який список для порядку дій?', o: ['Маркований', 'Нумерований', 'Зі стилями', 'Змішаний'], a: [1], e: 'Нумерація показує послідовність.' },
+    { t: 'o', q: 'Порядок створення багаторівневого списку:', o: ['Набрати текст', 'Виділити', 'Обрати стиль список', 'Натиснути Tab'], e: 'Правильно!' },
   ]},
-  { ic: '∑', n: 'Секретні символи', topic: 'Спеціальні символи і формули', tip: 'Повторіть вставлення символів (Вставлення → Символ) та редактор формул (Alt + =).', q: [
-    { t: 's', q: 'Як вставити символ ©, якого немає на клавіатурі?', o: ['Вставлення → Символ', 'Основне → Шрифт', 'Макет → Поля', 'Рецензування → Орфографія'], a: 0, e: 'Вкладка «Вставлення» → «Символ» відкриває таблицю спеціальних символів.' },
-    { t: 's', q: 'Де в Word створюється математична формула?', o: ['Вставлення → Формула', 'Конструктор → Тема', 'Вигляд → Масштаб', 'Файл → Друк'], a: 0, e: 'Вставлення → Формула (або Alt + =) відкриває редактор формул.' },
-    { t: 'm', q: 'Які з цих знаків є спеціальними символами? (оберіть усі правильні)', o: ['©', '≈', 'abc', '€'], a: [0, 1, 3], e: '©, ≈ і € вставляють через таблицю символів, а abc — звичайні літери.' }
+  { ic: '∑', n: 'Спецсимволи', topic: 'Символи й формули', q: [
+    { t: 's', q: 'Як вставити символ ©?', o: ['Вставлення → Символ', 'Шрифт → Колір', 'Макет → Поля', 'Редагування → Скопіювати'], a: 0, e: 'Вставлення → Символ.' },
+    { t: 'a', q: 'Напишіть один приклад математичного знака:', hint: 'Наприклад: ≈, ±, √', ans: ['≈', '√', '±', '∞', '∑'], e: 'Це спеціальні математичні символи.' },
+    { t: 'm', q: 'Які спецсимволи?', o: ['©', '≈', 'abc', '€'], a: [0, 1, 3], e: '©, ≈ і € — спеціальні.' },
   ]},
-  { ic: '📰', n: 'Колонки та розділи', topic: 'Стовпці та розділи', tip: 'Повторіть: Макет → Стовпці та різні види розривів розділу (безперервний, з наступної сторінки).', q: [
-    { t: 's', q: 'Де знаходиться команда «Стовпці» для розбиття тексту на колонки?', o: ['Вкладка «Макет» (Розмітка сторінки)', 'Вкладка «Рецензування»', 'Вкладка «Вигляд»', 'Вкладка «Файл»'], a: 0, e: 'Макет → Стовпці: обираєте 2, 3 або власну кількість колонок.' },
-    { t: 's', q: 'Потрібно, щоб на одній сторінці заголовок був в одній колонці, а текст під ним — у двох. Що зробити?', o: ['Вставити таблицю', 'Вставити безперервний розрив розділу й лише для другого розділу задати два стовпці', 'Зменшити шрифт', 'Зробити два файли'], a: 1, e: 'Кожен розділ має власні налаштування стовпців. Безперервний розрив лишає їх на одній сторінці.' },
-    { t: 's', q: 'Для чого потрібен розрив розділу «Наступна сторінка»?', o: ['Щоб видалити текст', 'Щоб новий розділ починався з нової сторінки і мав власні параметри (орієнтація, колонтитули)', 'Щоб збільшити шрифт', 'Щоб додати малюнок'], a: 1, e: 'Такий розрив створює новий розділ з нової сторінки — зручно змінити орієнтацію чи колонтитули.' }
+  { ic: '📰', n: 'Колонки й розділи', topic: 'Багатоколонний формат', q: [
+    { t: 's', q: 'Де команда для розбиття на колонки?', o: ['Макет', 'Рецензування', 'Вигляд', 'Файл'], a: 0, e: 'Макет → Стовпці.' },
+    { t: 'steps', q: 'Як зробити текст у 2 колонки?', steps: ['Виділити текст', 'Макет', 'Стовпці', 'Обрати «2»'], e: 'Текст перебудується в 2 колонки!' },
+    { t: 'a', q: 'Скільки колонок можна задати вручну?', hint: 'Число від 1 до 5', ans: ['1', '2', '3', '4', '5', 'більше'], e: 'Word підтримує до 5+ колонок.' },
   ]},
-  { ic: '🔖', n: 'Верх і низ сторінки', topic: 'Колонтитули', tip: 'Повторіть: двічі клацнути в полі сторінки, номер сторінки, особливий колонтитул першої сторінки.', q: [
-    { t: 's', q: 'Що таке колонтитул?', o: ['Заголовок першого рівня', 'Текст чи об’єкт у верхньому або нижньому полі, що повторюється на сторінках', 'Вид списку', 'Тип розриву'], a: 1, e: 'Колонтитул — повторювана інформація у верхньому чи нижньому полі: назва, автор, номер сторінки.' },
-    { t: 's', q: 'Як додати нумерацію сторінок?', o: ['Вставлення → Номер сторінки', 'Макет → Орієнтація', 'Основне → Маркери', 'Вигляд → Лінійка'], a: 0, e: 'Вставлення → Номер сторінки (угорі, внизу, на полях).' },
-    { t: 's', q: 'Як зробити, щоб на титульній сторінці не було колонтитула?', o: ['Видалити титульну сторінку', 'Увімкнути «Особливий колонтитул для першої сторінки»', 'Змінити колір тексту на білий', 'Вставити розрив рядка'], a: 1, e: 'У вкладці «Колонтитули» (Конструктор) є прапорець «Особливий колонтитул для першої сторінки».' }
+  { ic: '🔖', n: 'Колонтитули', topic: 'Верхній і нижній колонтитули', q: [
+    { t: 's', q: 'Що таке колонтитул?', o: ['Заголовок', 'Текст у полі сторінки', 'Номер розділу', 'Таблиця'], a: 1, e: 'Колонтитул — повторювана інформація.' },
+    { t: 's', q: 'Як додати номер сторінки?', o: ['Вставлення → Номер', 'Макет → Орієнтація', 'Основне → Числа', 'Файл → Друк'], a: 0, e: 'Вставлення → Номер сторінки.' },
+    { t: 'a', q: 'Що можна помістити в колонтитул?', hint: 'Наприклад: назва, автор, дата', ans: ['назва', 'автор', 'дата', 'номер', 'логотип'], e: 'У колонтитулі розміщується будь-яка інформація.' },
   ]},
-  { ic: '🗺️', n: 'Створення змісту', bonus: 1, topic: 'Зміст документа', tip: 'Повторіть: заголовки зі стилями «Заголовок 1/2», Посилання → Зміст, оновлення змісту після правок.', q: [
-    { t: 's', q: 'Що потрібно зробити із заголовками, щоб Word міг автоматично створити зміст?', o: ['Зробити їх жирними', 'Застосувати стилі «Заголовок 1», «Заголовок 2» тощо', 'Написати їх великими літерами', 'Підкреслити'], a: 1, e: 'Автозміст будується за стилями заголовків. Просто жирний текст Word заголовком не вважає.' },
-    { t: 's', q: 'Де знаходиться команда «Зміст»?', o: ['Вкладка «Посилання» → Зміст', 'Вкладка «Вставлення» → Таблиця', 'Вкладка «Вигляд» → Масштаб', 'Вкладка «Рецензування» → Коментар'], a: 0, e: 'Посилання → Зміст — готові стилі та «Настроюваний зміст».' },
-    { t: 'o', q: 'Розташуйте дії для створення змісту у правильному порядку:', o: ['Оформити заголовки стилями «Заголовок 1/2»', 'Поставити курсор у місце, де буде зміст', 'Посилання → Зміст і обрати вигляд', 'Після правок документа натиснути «Оновити таблицю»'], e: 'Спочатку структура (стилі), потім вставлення змісту, а після змін — оновлення.' },
-    { t: 'm', q: 'Що з цього можна зробити зі змістом після вставлення в документ? (оберіть усі правильні)', o: ['Видалити і створити нову версію', 'Змінити його вигляд через інші стилі', 'Оновити його, щоб урахунок нові заголовки', 'Автоматично видаляти при збереженні документа'], a: [0, 1, 2], e: 'Зміст легко видалити й вставити заново, змінити його оформлення через стилі й оновити при правках. Він не видаляється сам.' }
+  { ic: '📋', n: 'Спеціальні символи', topic: 'Використання спецсимволів', q: [
+    { t: 'a', q: 'Напишіть значок, що часто ставлять біля назв авторських прав:', hint: 'Наприклад: ©', ans: ['©', '(c)'], e: 'Копірайт — © або (c).' },
+    { t: 's', q: 'Математичний знак для кореня:', o: ['√', '≈', '±', '∞'], a: 0, e: '√ — корінь квадратний.' },
+  ]},
+  { ic: '🗺️', n: 'Зміст документа', bonus: 1, topic: 'Автоматичний зміст', q: [
+    { t: 's', q: 'Що потрібно, щоб зміст буда автоматичним?', o: ['Жирний текст', 'Стилі Заголовок', 'Великі літери', 'Підкреслення'], a: 1, e: 'Стилі заголовків — основа змісту.' },
+    { t: 's', q: 'Де команда Зміст?', o: ['Посилання', 'Вставлення', 'Вигляд', 'Рецензування'], a: 0, e: 'Посилання → Зміст.' },
+    { t: 'steps', q: 'Як створити зміст?', steps: ['Оформити заголовки стилями', 'Курсор у місце змісту', 'Посилання → Зміст', 'Обрати вигляд'], e: 'Зміст готово!' },
+    { t: 'a', q: 'Як оновити зміст після змін?', hint: 'Знайти кнопку...', ans: ['оновити', 'refresh', 'оновити таблицю'], e: 'Правий клік на змісті → Оновити.' },
   ]}
 ];
 
 let S = { name: '', xp: 0, streak: 0, best: 0, done: [], res: [], cur: 0, qi: 0, miss: [] };
+
+function getGrade(p) {
+  if (p >= 95) return 12;
+  if (p >= 90) return 11;
+  if (p >= 85) return 10;
+  if (p >= 75) return 9;
+  if (p >= 65) return 8;
+  if (p >= 55) return 7;
+  if (p >= 45) return 6;
+  if (p >= 35) return 5;
+  if (p >= 25) return 4;
+  if (p >= 15) return 3;
+  return 1;
+}
+
+function gradeDesc(g) {
+  if (g >= 10) return ['Відмінно', 'emerald'];
+  if (g >= 7) return ['Добре', 'blue'];
+  if (g >= 5) return ['Задовільно', 'amber'];
+  return ['Потребує роботи', 'rose'];
+}
 
 function headerStats() {
   return `<div class="flex items-center justify-between mb-4 pb-3 border-b border-zinc-100">
@@ -251,21 +152,16 @@ function start() {
   const app = $('#app');
   app.innerHTML = `<div class="clean-card p-6 sm:p-8">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 text-xs font-semibold mb-4">
-      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> 9 клас · Інформатика
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> 9 клас · Розділ 2
     </div>
-    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900 mb-2">Місія: Документ</h1>
-    <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-      Пройдіть інтерактивні місії з теми «Опрацювання текстових даних». Перевірте свої знання та отримайте підсумковий звіт.
-    </p>
+    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900 mb-2">Текстовий Форматор</h1>
+    <p class="text-zinc-500 text-sm leading-relaxed mb-6">Підсумок теми «Опрацювання текстових даних». Перевірте свої вміння й отримайте оцінку.</p>
     <div class="space-y-4">
       <div>
-        <label for="nm" class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">Ваше ім’я та клас:</label>
-        <input id="nm" type="text" maxlength="40" placeholder="Наприклад: Тарас Шевченко, 9-А" 
-               class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm font-medium text-zinc-900 focus:outline-none focus:bg-white focus:border-zinc-400 transition-all">
+        <label for="nm" class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">Ваше ім'я та клас:</label>
+        <input id="nm" type="text" maxlength="40" placeholder="Наприклад: Тарас Шевченко, 9-А">
       </div>
-      <button class="btn-action w-full py-3 text-sm flex items-center justify-center gap-2 shadow-sm" id="go">
-        Почати місії <i class="fa-solid fa-arrow-right text-xs"></i>
-      </button>
+      <button class="btn-action w-full py-3 text-sm flex items-center justify-center gap-2 shadow-sm" id="go">Почати <i class="fa-solid fa-arrow-right text-xs"></i></button>
     </div>
   </div>`;
 
@@ -278,11 +174,10 @@ function map() {
   const app = $('#app');
   app.innerHTML = headerStats() + `<div class="clean-card p-6">
     <div class="flex items-center justify-between mb-2">
-      <h2 class="text-lg font-bold text-zinc-900">Карта місій</h2>
+      <h2 class="text-lg font-bold text-zinc-900">Розділи</h2>
       <span class="text-xs font-semibold text-zinc-400">${n} з ${M.length}</span>
     </div>
     <div class="bar-bg mb-6"><div class="bar-fill" style="width:${(n / M.length) * 100}%"></div></div>
-    
     <div class="space-y-2.5">` +
     M.map((m, i) => {
       const d = S.done.includes(i), lock = !d && i > S.done.length;
@@ -291,20 +186,16 @@ function map() {
         d ? 'bg-emerald-50/50 border-emerald-200' : lock ? 'bg-zinc-50 border-zinc-100 opacity-60 cursor-not-allowed' : 'bg-white border-zinc-200 hover:border-zinc-400'
       }" data-i="${i}" ${lock || d ? 'disabled' : ''}>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-lg">
-            ${d ? '✅' : lock ? '🔒' : m.ic}
-          </div>
+          <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-lg">${d ? '✅' : lock ? '🔒' : m.ic}</div>
           <div>
-            <h3 class="text-sm font-bold text-zinc-900 mb-0.5">${m.bonus ? 'Місія 6: ' : 'Місія ' + (i + 1) + ': '}${m.n}</h3>
-            <p class="text-xs text-zinc-400 font-normal">${d ? 'Результат: ' + r.c + ' із ' + r.t : m.topic}</p>
+            <h3 class="text-sm font-bold text-zinc-900 mb-0.5">${m.n}</h3>
+            <p class="text-xs text-zinc-400">${d ? 'Результат: ' + r.c + '/' + r.t : m.topic}</p>
           </div>
         </div>
         <i class="fa-solid fa-chevron-right text-xs text-zinc-300"></i>
       </button>`;
     }).join('') +
-    `</div>
-    ${all ? '<div class="mt-6"><button class="btn-action w-full py-3 text-sm" id="rep">Отримати підсумковий звіт</button></div>' : ''}
-  </div>`;
+    `</div>${all ? '<div class="mt-6"><button class="btn-action w-full py-3 text-sm" id="rep">Отримати оцінку</button></div>' : ''}</div>`;
 
   document.querySelectorAll('.mis-btn').forEach(b => b.onclick = () => {
     S.cur = +b.dataset.i; S.qi = 0; S.res[S.cur] = { c: 0, t: M[S.cur].q.length }; question();
@@ -314,8 +205,8 @@ function map() {
 
 function question() {
   const m = M[S.cur], q = m.q[S.qi];
-  let sel = [], checked = false;
-  let items = sh(q.o.map((t, i) => ({ t, i })));
+  let sel = [], checked = false, ansText = '';
+  let items = sh(q.o ? q.o.map((t, i) => ({ t, i })) : []);
   const app = $('#app');
 
   app.innerHTML = headerStats() + `<div class="clean-card p-6">
@@ -324,26 +215,46 @@ function question() {
       <span>Завдання ${S.qi + 1} з ${m.q.length}</span>
     </div>
     <div class="bar-bg mb-5"><div class="bar-fill" style="width:${(S.qi / m.q.length) * 100}%"></div></div>
-    
     <h3 class="text-base font-bold text-zinc-900 mb-1">${esc(q.q)}</h3>
-    ${q.t === 'm' ? '<p class="text-xs text-zinc-400 italic mb-4">Можливо кілька відповідей.</p>' : ''}
-    ${q.t === 'o' ? '<p class="text-xs text-zinc-400 italic mb-4">Натискайте на кроки по черзі для побудови порядку.</p>' : '<div class="mb-2"></div>'}
-
+    ${q.hint ? `<p class="text-xs text-zinc-400 italic mb-3">Підказка: ${q.hint}</p>` : ''}
+    ${q.t === 'm' ? '<p class="text-xs text-zinc-400 italic mb-4">Кілька правильних відповідей.</p>' : ''}
+    ${q.t === 'o' ? '<p class="text-xs text-zinc-400 italic mb-4">Розташуйте по порядку.</p>' : ''}
+    ${q.t === 'steps' ? '<p class="text-xs text-zinc-400 italic mb-4">Натисніть кроки послідовно.</p>' : ''}
+    ${q.t === 'a' ? '<input id="ansInput" type="text" placeholder="Напишіть відповідь..." style="margin: 12px 0;">' : ''}
     <div id="qbody" class="space-y-1 mb-4"></div>
     <div id="fb" class="mb-4"></div>
     <div id="acts"></div>
   </div>`;
 
   const qbody = $('#qbody'), acts = $('#acts');
+  let stepsProgress = [];
 
   function draw() {
-    if (q.t === 'o') {
+    if (q.t === 'a') {
+      // Text input
+      if (checked) {
+        $('#ansInput').disabled = true;
+      }
+    } else if (q.t === 'steps') {
+      qbody.innerHTML = `<div class="space-y-2">
+        <div class="text-xs font-bold text-zinc-600 mb-2">Виконано: <span id="stepCount">${stepsProgress.length}</span>/${q.steps.length}</div>
+        ${q.steps.map((st, i) => `
+          <button class="opt-btn text-xs ${stepsProgress.includes(i) ? 'right !m-0' : ''}" data-step="${i}" ${checked || stepsProgress.includes(i) ? 'disabled' : ''}>
+            <span class="font-bold text-xs">${stepsProgress.includes(i) ? '✓' : i + 1}</span> ${st}
+          </button>
+        `).join('')}
+      </div>`;
+      qbody.querySelectorAll('[data-step]').forEach(b => {
+        if (!checked && !stepsProgress.includes(+b.dataset.step)) {
+          b.onclick = () => { stepsProgress.push(+b.dataset.step); draw(); };
+        }
+      });
+    } else if (q.t === 'o') {
       const pool = items.filter(x => !sel.includes(x.i));
       qbody.innerHTML = `<div class="p-3 rounded-xl border border-dashed border-zinc-200 bg-zinc-50 min-h-[50px] mb-3 flex flex-wrap gap-1.5" id="ans">
-        ${sel.map(i => `<button class="opt-btn !w-auto !py-1.5 !px-3 !m-0 text-xs" data-r="${i}">${esc(q.o[i])}</button>`).join('') || '<span class="text-xs text-zinc-400">Ваша відповідь з’явиться тут...</span>'}
+        ${sel.map(i => `<button class="opt-btn !w-auto !py-1.5 !px-3 !m-0 text-xs" data-r="${i}">${esc(q.o[i])}</button>`).join('') || '<span class="text-xs text-zinc-400">Ваша відповідь…</span>'}
       </div>
       <div class="space-y-1">${pool.map(x => `<button class="opt-btn text-xs !py-2" data-a="${x.i}">${esc(x.t)}</button>`).join('')}</div>`;
-
       qbody.querySelectorAll('[data-a]').forEach(b => b.onclick = () => { if (checked) return; sel.push(+b.dataset.a); draw(); });
       qbody.querySelectorAll('[data-r]').forEach(b => b.onclick = () => { if (checked) return; sel = sel.filter(x => x !== +b.dataset.r); draw(); });
       $('#chk').disabled = sel.length !== q.o.length;
@@ -359,24 +270,40 @@ function question() {
     }
   }
 
-  acts.innerHTML = '<button class="btn-action w-full py-2.5 text-sm disabled:opacity-40" id="chk" disabled>Перевірити</button>';
-  draw();
+  acts.innerHTML = `<button class="btn-action w-full py-2.5 text-sm disabled:opacity-40" id="chk" ${q.t === 'a' ? '' : 'disabled'}>Перевірити</button>`;
+  
+  if (q.t !== 'a') {
+    draw();
+  } else {
+    $('#chk').disabled = false;
+  }
 
   $('#chk').onclick = () => {
     checked = true; let ok;
-    if (q.t === 'o') ok = sel.every((v, k) => v === k);
-    else if (q.t === 's') ok = sel[0] === q.a;
-    else ok = sel.length === q.a.length && q.a.every(x => sel.includes(x));
 
-    if (q.t !== 'o') {
+    if (q.t === 'a') {
+      ansText = ($('#ansInput').value || '').trim().toLowerCase();
+      ok = q.ans.some(a => ansText.includes(a.toLowerCase()) || a.toLowerCase().includes(ansText));
+    } else if (q.t === 'steps') {
+      const expected = [...Array(q.steps.length).keys()];
+      ok = stepsProgress.length === expected.length && stepsProgress.every((v, k) => v === k);
+    } else if (q.t === 'o') {
+      ok = sel.every((v, k) => v === k);
+    } else if (q.t === 's') {
+      ok = sel[0] === q.a;
+    } else {
+      ok = sel.length === q.a.length && q.a.every(x => sel.includes(x));
+    }
+
+    if (!['a', 'steps'].includes(q.t)) {
       const corr = q.t === 's' ? [q.a] : q.a;
       qbody.querySelectorAll('.opt-btn').forEach(b => {
         const i = +b.dataset.i;
         if (corr.includes(i)) b.classList.add('right');
         else if (sel.includes(i)) b.classList.add('wrong');
       });
-    } else {
-      qbody.innerHTML = `<p class="text-xs font-bold text-zinc-700 mb-1">Правильний порядок:</p><ol class="list-decimal pl-4 text-xs text-zinc-600 space-y-1">${q.o.map(t => `<li>${esc(t)}</li>`).join('')}</ol>`;
+    } else if (q.t === 'o') {
+      qbody.innerHTML = `<p class="text-xs font-bold text-zinc-700 mb-1">Правильно:</p><ol class="list-decimal pl-4 text-xs text-zinc-600 space-y-1">${q.o.map(t => `<li>${esc(t)}</li>`).join('')}</ol>`;
     }
 
     let gain = 0;
@@ -395,7 +322,7 @@ function question() {
 
     const last = S.qi === m.q.length - 1;
     acts.innerHTML = `<button class="btn-action w-full py-2.5 text-sm flex items-center justify-center gap-2" id="nx">
-      ${last ? 'Завершити місію' : 'Далі'} <i class="fa-solid fa-chevron-right text-xs"></i>
+      ${last ? 'Завершити' : 'Далі'} <i class="fa-solid fa-chevron-right text-xs"></i>
     </button>`;
     $('#nx').focus();
     $('#nx').onclick = () => { if (last) { S.done.push(S.cur); missionEnd(); } else { S.qi++; question(); } };
@@ -408,70 +335,59 @@ function missionEnd() {
   app.innerHTML = headerStats() + `<div class="clean-card p-6 text-center space-y-4">
     <div class="text-4xl font-extrabold text-zinc-900">${r.c} / ${r.t}</div>
     <div>
-      <h2 class="text-lg font-bold text-zinc-900 mb-1">${ok ? 'Місію виконано бездоганно!' : r.c >= r.t / 2 ? 'Місію виконано!' : 'Є над чим попрацювати'}</h2>
+      <h2 class="text-lg font-bold text-zinc-900 mb-1">${ok ? 'Бездоганно!' : r.c >= r.t / 2 ? 'Добре!' : 'Варто повторити'}</h2>
       <p class="text-xs text-zinc-400">${M[S.cur].n}</p>
     </div>
-    <button class="btn-action w-full py-3 text-sm" id="b">${S.done.length === M.length ? 'Перейти до звіту' : 'На карту місій'}</button>
+    <button class="btn-action w-full py-3 text-sm" id="b">${S.done.length === M.length ? 'До оцінки' : 'До карти'}</button>
   </div>`;
   $('#b').onclick = () => S.done.length === M.length ? report() : map();
 }
 
-function lvl(p) {
-  return p >= 80 ? ['bg-emerald-50 text-emerald-700 border-emerald-200', 'Засвоєно добре'] :
-         p >= 50 ? ['bg-amber-50 text-amber-700 border-amber-200', 'Потрібне повторення'] :
-                   ['bg-rose-50 text-rose-700 border-rose-200', 'Варто повторити'];
-}
-
 function report() {
   const tot = S.res.reduce((a, r) => a + r.c, 0), all = S.res.reduce((a, r) => a + r.t, 0), p = Math.round(tot / all * 100);
-  const rank = p >= 90 ? 'Легенда документів 🏆' : p >= 70 ? 'Старший агент 🎖️' : p >= 50 ? 'Агент-практик 🛠️' : 'Курсант 🌱';
+  const grade = getGrade(p);
+  const [desc, color] = gradeDesc(grade);
   const rows = M.map((m, i) => ({ m, i, p: Math.round(S.res[i].c / S.res[i].t * 100) }));
-  const sorted = rows.slice().sort((a, b) => b.p - a.p);
-  const weak = rows.filter(x => x.p < 80);
   const app = $('#app');
+
+  const colorMap = { emerald: 'bg-emerald-50 text-emerald-700 border-emerald-200', blue: 'bg-blue-50 text-blue-700 border-blue-200', amber: 'bg-amber-50 text-amber-700 border-amber-200', rose: 'bg-rose-50 text-rose-700 border-rose-200' };
 
   app.innerHTML = headerStats() + `<div class="space-y-4">
     <div class="clean-card p-6 text-center">
-      <p class="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">${esc(S.name)} · ${new Date().toLocaleDateString('uk-UA')}</p>
-      <div class="text-5xl font-extrabold text-zinc-900 my-2">${p}%</div>
-      <p class="text-xs text-zinc-500">
-        Правильних: <b>${tot} з ${all}</b> · Ранг: <b>${rank}</b> · Серія: <b>${S.best}</b> · <b>${S.xp} XP</b>
-      </p>
+      <p class="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">${esc(S.name)}</p>
+      <div class="text-6xl font-extrabold text-zinc-900 my-2">${grade}</div>
+      <p class="text-sm font-bold ${colorMap[color]} inline-block px-3 py-1 rounded-lg border">${desc}</p>
+      <p class="text-xs text-zinc-500 mt-3">Результат: <b>${tot} з ${all}</b> (${p}%) · <b>${S.xp} XP</b></p>
     </div>
 
     <div class="clean-card p-6">
-      <h3 class="text-sm font-bold text-zinc-900 mb-3">Результати за темами</h3>
-      <div class="space-y-3">
+      <h3 class="text-sm font-bold text-zinc-900 mb-3">За розділами</h3>
+      <div class="space-y-2">
         ${rows.map(x => {
-          const l = lvl(x.p);
+          const g = getGrade(x.p);
+          const [d, c] = gradeDesc(g);
           return `<div class="flex items-center justify-between p-2.5 rounded-xl border border-zinc-100 bg-zinc-50/50 text-xs">
-            <div class="flex items-center gap-2.5">
-              <span class="text-base">${x.m.ic}</span>
-              <span class="font-bold text-zinc-800">${x.m.topic}</span>
-            </div>
-            <span class="px-2 py-0.5 rounded-md border font-semibold ${l[0]}">${x.p}\% ·${l[1]}</span>
+            <span class="font-bold text-zinc-800">${x.m.n}</span>
+            <span class="px-2 py-0.5 rounded-md ${colorMap[c]} border font-semibold">${g}</span>
           </div>`;
         }).join('')}
       </div>
     </div>
 
-    <div class="clean-card p-6 text-xs text-zinc-600 space-y-3">
-      <h3 class="text-sm font-bold text-zinc-900">Підсумок</h3>
-      <p>💪 <b>Найкраще засвоєно:</b> ${sorted.filter(x => x.p === sorted[0].p).map(x => x.m.topic).join(', ')} (${sorted[0].p}%).</p>
-      ${weak.length ? `<p>🔁 <b>Що повторити:</b></p><ul class="list-disc pl-4 space-y-1">${weak.sort((a, b) => a.p - b.p).map(x => `<li><b>${x.m.topic}</b> — ${x.m.tip}</li>`).join('')}</ul>` : '<p>🎉 Усі теми засвоєно добре!</p>'}
-      ${S.miss.length ? `<div class="pt-2"><h4 class="font-bold text-zinc-900 mb-2">Розбір помилок:</h4><div class="space-y-2">${S.miss.map(x => `<div class="p-2.5 rounded-xl border border-rose-100 bg-rose-50/50 text-rose-900"><b>${esc(x.q)}</b><br>${esc(x.e)}</div>`).join('')}</div></div>` : ''}
+    <div class="clean-card p-6 text-xs text-zinc-600 space-y-2">
+      ${S.miss.length ? `<h3 class="text-sm font-bold text-zinc-900">Розбір помилок:</h3><div class="space-y-1.5">${S.miss.map(x => `<div class="p-2 rounded-lg border border-rose-100 bg-rose-50"><b>${esc(x.q)}</b><br>${esc(x.e)}</div>`).join('')}</div>` : '<p class="font-bold text-emerald-700">🎉 Всі відповіді правильні!</p>'}
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-2 noprint">
-      <button class="btn-action flex-1 py-2.5 text-xs" id="cp">Скопіювати звіт</button>
-      <button class="btn-alt flex-1 py-2.5 text-xs" id="pr">Роздрукувати</button>
-      <button class="btn-alt flex-1 py-2.5 text-xs" id="rs">Пройти знову</button>
+    <div class="flex flex-col gap-2 noprint">
+      <button class="btn-action py-2.5 text-xs" id="cp">Копіювати результат</button>
+      <button class="btn-alt py-2.5 text-xs" id="pr">Роздрукувати</button>
+      <button class="btn-alt py-2.5 text-xs" id="rs">Почати знову</button>
     </div>
     <p id="cm" class="text-xs text-center text-emerald-600 font-semibold noprint"></p>
   </div>`;
 
-  const txt = `Звіт: ${S.name}\nРезультат: ${tot} із ${all} (${p}%), ранг: ${rank}\n` + rows.map(x => `- ${x.m.topic}: ${x.p}% (${lvl(x.p)[1]})`).join('\n') + (weak.length ? '\nПовторити: ' + weak.map(x => x.m.topic).join(', ') : '');
-  $('#cp').onclick = () => { (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => $('#cm').textContent = 'Звіт скопійовано!').catch(() => $('#cm').textContent = 'Зробіть знімок екрана.'); };
+  const txt = `${S.name}\nОцінка: ${grade} (${desc})\nРезультат: ${tot}/${all} (${p}%)\n` + rows.map(x => `- ${x.m.n}: ${getGrade(x.p)}`).join('\n');
+  $('#cp').onclick = () => (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => $('#cm').textContent = 'Скопійовано!').catch(() => $('#cm').textContent = 'Не вийшло.');
   $('#pr').onclick = () => window.print();
   $('#rs').onclick = () => { S = { name: '', xp: 0, streak: 0, best: 0, done: [], res: [], cur: 0, qi: 0, miss: [] }; start(); };
 }
