@@ -2,482 +2,85 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Місія: Документ — підсумковий тест, 9 клас</title>
-<!-- SVG Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2318181b'/><text x='50%' y='68%' font-family='sans-serif' font-weight='800' font-size='50' fill='%23ffffff' text-anchor='middle'>📄</text></svg>">
-
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-        }
-      }
-    }
-  }
-</script>
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- FontAwesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+<title>Місія «Документ» — навчальний квест</title>
 <style>
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #fcfcfc;
-    color: #18181b;
-    touch-action: manipulation;
-  }
-
-  .glass-header {
-    background: rgba(252, 252, 252, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  .clean-card {
-    background: #ffffff;
-    border: 1px solid #e4e4e7;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: all 0.2s ease;
-  }
-
-  .btn-action {
-    background: #18181b;
-    color: #ffffff;
-    font-weight: 600;
-    border-radius: 12px;
-    transition: all 0.15s ease;
-  }
-  .btn-action:hover {
-    background: #27272a;
-  }
-
-  .btn-alt {
-    background: #f4f4f5;
-    border: 1px solid #e4e4e7;
-    color: #27272a;
-    font-weight: 600;
-    border-radius: 12px;
-    transition: all 0.15s ease;
-  }
-  .btn-alt:hover {
-    background: #e4e4e7;
-  }
-
-  .opt-btn {
-    width: 100%;
-    text-align: left;
-    background: #f4f4f5;
-    border: 1px solid #e4e4e7;
-    border-radius: 12px;
-    padding: 12px 16px;
-    margin: 6px 0;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #27272a;
-    transition: all 0.15s ease;
-  }
-  .opt-btn:hover {
-    background: #e4e4e7;
-    border-color: #d4d4d8;
-  }
-  .opt-btn.sel {
-    background: #18181b;
-    color: #ffffff;
-    border-color: #18181b;
-  }
-  .opt-btn.right {
-    background: #ecfdf5;
-    border-color: #10b981;
-    color: #047857;
-    font-weight: 600;
-  }
-  .opt-btn.wrong {
-    background: #fef2f2;
-    border-color: #ef4444;
-    color: #b91c1c;
-    font-weight: 600;
-  }
-
-  .bar-bg {
-    height: 8px;
-    background: #e4e4e7;
-    border-radius: 99px;
-    overflow: hidden;
-  }
-  .bar-fill {
-    height: 100%;
-    background: #10b981;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  @media print {
-    .noprint { display: none !important; }
-    body { background: #fff; }
-    .clean-card { box-shadow: none; border: 1px solid #ccc; }
-  }
+:root{color-scheme:dark;--bg:#0a0a0a;--card:#121212;--field:#171717;--edge:#2b2b2b;--text:#e5e5e5;--muted:#a3a3a3;--green:#3b82f6;--yellow:#60a5fa;--red:#f87171;--blue:#60a5fa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+#app{max-width:850px;margin:auto;padding:22px 16px 56px}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2rem,6vw,3.1rem);line-height:1.08;color:#fff;letter-spacing:-.04em;margin-bottom:12px}h2{font-size:1.35rem;color:#fff;margin-bottom:10px}h3{font-size:1rem;color:#fff}.muted{color:var(--muted)}.tag{display:inline-block;padding:5px 10px;border-radius:8px;background:#10213d;border:1px solid #234a82;color:#93c5fd;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--edge);border-radius:18px;padding:clamp(18px,4vw,28px);margin:16px 0;box-shadow:0 12px 30px #0005}.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,#3b82f608,transparent 45%)}.card>*{position:relative}
+.hero{padding-top:30px}.hero-art{display:flex;align-items:center;gap:18px;margin:26px 0 30px;padding:18px;border:1px solid #263b5a;border-radius:16px;background:linear-gradient(120deg,#10213d,#111827)}.doc-icon{width:76px;height:88px;flex:0 0 76px;border:2px solid #60a5fa;border-radius:12px;background:#0b1220;position:relative;padding:19px 11px 10px}.doc-icon:before{content:"";position:absolute;top:0;right:0;border-style:solid;border-width:0 20px 20px 0;border-color:transparent #60a5fa transparent transparent}.doc-icon i{display:block;height:4px;border-radius:4px;background:#60a5fa;margin:7px 0;opacity:.85}.hero-meter{flex:1;min-width:0}.hero-percent{font-size:clamp(2rem,7vw,3.4rem);line-height:1;font-weight:850;letter-spacing:-.06em;color:#93c5fd}.hero-caption{margin-top:8px;color:#a3a3a3;font-size:.84rem;line-height:1.4}.hero-track{height:6px;background:#263244;border-radius:9px;overflow:hidden;margin-top:13px}.hero-track i{display:block;width:100%;height:100%;background:#3b82f6;border-radius:9px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--green);border-radius:11px;padding:11px 17px;background:var(--green);color:#eff6ff;font:inherit;font-weight:750;cursor:pointer;text-decoration:none;margin:5px 6px 0 0}.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}.btn.secondary{background:var(--field);border-color:var(--edge);color:var(--text)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+input,select,textarea{width:100%;max-width:420px;padding:12px 14px;border:1px solid var(--edge);border-radius:10px;background:var(--field);color:var(--text);font:inherit}label{display:block;color:#d4d4d4;font-size:.9rem;font-weight:650;margin:14px 0 6px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.stat{padding:14px;border:1px solid var(--edge);border-radius:12px;background:#ffffff04}.stat b{display:block;font-size:1.4rem;color:#fff}.progress-top{position:sticky;top:8px;z-index:5;padding:12px 14px;border:1px solid var(--edge);border-radius:14px;background:#141414ed;backdrop-filter:blur(12px);margin-bottom:16px}.progress-line{height:7px;background:#303030;border-radius:9px;overflow:hidden;margin-top:10px}.progress-line i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+.stage-list{display:grid;gap:10px;margin:18px 0}.stage{display:flex;gap:12px;align-items:center;border:1px solid var(--edge);border-radius:13px;padding:13px;background:#ffffff03}.stage .num{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border-radius:10px;background:#242424;color:#aaa;font-weight:800}.stage.done{border-color:#234a82;background:#101d32}.stage.done .num{background:#1d4ed8;color:#dbeafe}.stage.active{border-color:#3f3f46;background:#202020}.stage small{display:block;color:var(--muted)}.stage .status{margin-left:auto;color:var(--muted);font-size:.8rem;white-space:nowrap}
+.q{font-size:1.12rem;font-weight:750;color:#fff;line-height:1.4;margin:18px 0 12px}.opts{display:grid;gap:9px;margin:14px 0}.opt{width:100%;text-align:left;border:1px solid var(--edge);border-radius:11px;background:var(--field);color:var(--text);padding:12px 14px;font:inherit;cursor:pointer}.opt:hover:not(:disabled){border-color:#666;background:#202020}.opt.correct{border-color:#3b82f6;background:#10213d;color:#bfdbfe}.opt.wrong{border-color:var(--red);background:#35151d;color:#fecdd3}.opt:disabled{cursor:default}.feedback{padding:13px 15px;border-radius:10px;margin-top:14px;background:#10213d;border-left:4px solid var(--green)}.feedback.bad{background:#35151d;border-color:var(--red)}.hint{margin:12px 0;padding:12px 14px;border-left:4px solid var(--blue);background:#facc1510;border-radius:8px}.hidden{display:none!important}.data-table{width:100%;border-collapse:collapse;margin:12px 0}.data-table th,.data-table td{border:1px solid var(--edge);padding:9px 12px;text-align:left}.data-table th{background:#202020;color:#fff}.data-table td:last-child,.data-table th:last-child{text-align:right}.chip{display:inline-block;padding:8px 11px;background:#202020;border:1px solid var(--edge);border-radius:8px;margin:4px;font-weight:750}.codeword{display:inline-grid;place-items:center;min-width:40px;height:44px;padding:0 8px;border:1px solid #3f3f46;border-radius:9px;background:#202020;color:#93c5fd;font-weight:850;font-size:1.1rem;margin:3px}.mission-banner{border:1px dashed #3f3f46;border-radius:12px;padding:14px;background:#ffffff03;margin:16px 0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px} .result-score{font-size:4rem;font-weight:850;line-height:1;color:#60a5fa;text-align:center;margin:20px 0 8px}.result-score small{font-size:1rem;color:var(--muted);font-weight:600}.topic-row{padding:12px 0;border-bottom:1px solid var(--edge)}.topic-row:last-child{border-bottom:0}.bar{height:8px;background:#2b2b2b;border-radius:6px;overflow:hidden;margin-top:7px}.bar i{display:block;height:100%;background:var(--blue)}footer{text-align:center;color:#737373;font-size:.8rem;margin-top:24px}
+@media(max-width:520px){#app{padding:12px}.card{border-radius:14px}.stage .status{font-size:.72rem}.hero-art{height:72px}}
+@media print{body{background:white;color:#111}.card,.progress-top{box-shadow:none;background:white;color:#111;border-color:#ccc}.btn,.progress-top{display:none!important}.muted{color:#555}}
 </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-zinc-900 selection:text-white pb-6">
-
-  <!-- HEADER -->
-  <header class="sticky top-0 z-40 glass-header border-b border-zinc-200/80">
-    <div class="max-w-3xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-zinc-900 text-white flex items-center justify-center text-sm font-bold shadow-sm">
-          📄
-        </div>
-        <span class="font-bold tracking-tight text-zinc-900 text-base sm:text-lg">
-          Місія: Документ
-        </span>
-      </a>
-
-      <div class="flex items-center gap-2">
-        <button id="info-btn" onclick="showModal()" title="Про сайт" aria-label="Про сайт"
-                class="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 flex items-center justify-center text-zinc-800 font-serif italic text-sm font-bold transition-all shadow-sm">
-          i
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- MAIN APP CONTAINER -->
-  <main class="max-w-3xl mx-auto px-4 py-6 flex-grow w-full">
-    <div id="app"></div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-zinc-200/70 py-4 bg-zinc-50/50 mt-auto noprint">
-    <div class="max-w-3xl mx-auto px-4 text-center text-xs text-zinc-400">
-      &copy; <span id="year"></span> whyuxavier. Навчальний тест для 9 класу.
-    </div>
-  </footer>
-
-  <!-- MODAL [i] -->
-  <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200">
-    <div class="bg-white border border-zinc-200 rounded-2xl max-w-sm w-full p-6 shadow-xl relative">
-      <button onclick="hideModal()" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-500 hover:text-zinc-900 flex items-center justify-center text-xs">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-9 h-9 rounded-xl bg-zinc-900 text-white flex items-center justify-center text-base font-bold">
-          📄
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-zinc-900">Про тест</h3>
-          <p class="text-xs text-zinc-400">9 клас — Текстові дані</p>
-        </div>
-      </div>
-
-      <div class="space-y-3 text-xs text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
-        <p>Інтерактивний тест розроблений <b>вчителем Олександром Васильовичем Мрочком</b> для учнів 9 класу.</p>
-        <p>Місії допомагають повторити тему «Опрацювання текстових даних»: списки, формули, символи, стовпці, розділи, колонтитули й зміст документа.</p>
-        <div class="pt-2">
-          <a href="https://github.com/whyuxavier" target="_blank" rel="noopener noreferrer"
-             class="flex items-center justify-between w-full px-3 py-2 rounded-xl bg-zinc-900 text-white font-semibold transition-all">
-            <span><i class="fa-brands fa-github mr-1.5"></i> GitHub Профіль</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<body><main id="app"></main>
 <script>
-const $ = s => document.querySelector(s);
-const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-const sh = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
-
-// Modal Logic
-const showModal = () => { const m = $('#modal'); if (m) { m.classList.remove('hidden'); setTimeout(() => m.classList.remove('opacity-0'), 10); } };
-const hideModal = () => { const m = $('#modal'); if (m) { m.classList.add('opacity-0'); setTimeout(() => m.classList.add('hidden'), 200); } };
-$('#modal').onclick = e => { if (e.target === $('#modal')) hideModal(); };
-
-const M = [
-  { ic: '🛰️', n: 'Зв’язок із центром', topic: 'Системи опрацювання текстів', tip: 'Повторіть, які бувають текстові редактори й процесори (Блокнот, Word, Google Документи) і чим вони відрізняються.', q: [
-    { t: 's', q: 'Яка програма працює в браузері й дозволяє кільком людям одночасно редагувати один документ?', o: ['Блокнот', 'Google Документи', 'Paint', 'Калькулятор'], a: 1, e: 'Google Документи — онлайн-процесор зі спільним доступом.' },
-    { t: 's', q: 'Яке розширення має файл сучасного документа Word?', o: ['.txt', '.docx', '.xlsx', '.pptx'], a: 1, e: '.docx — документ Word. .xlsx — таблиця Excel, .pptx — презентація.' },
-    { t: 'm', q: 'Що вміє текстовий процесор, але НЕ вміє простий Блокнот? (оберіть усі правильні)', o: ['Змінювати шрифт і розмір тексту', 'Вставляти таблиці й зображення', 'Зберігати текст у файлі', 'Створювати колонтитули'], a: [0, 1, 3], e: 'Зберігати текст уміє й Блокнот, а от форматування, об’єкти та колонтитули — тільки текстові процесори.' }
-  ]},
-  { ic: '🧩', n: 'Шифр зі списків', topic: 'Багаторівневі списки', tip: 'Потренуйтеся створювати багаторівневі списки: Tab для підрівня, Shift+Tab для повернення, вибір стилю нумерації.', q: [
-    { t: 's', q: 'Як у багаторівневому списку зробити пункт підпунктом?', o: ['Натиснути Enter двічі', 'Поставити курсор у пункт і натиснути Tab', 'Натиснути Caps Lock', 'Змінити шрифт'], a: 1, e: 'Tab збільшує рівень (відступ), Shift+Tab повертає на рівень вище.' },
-    { t: 's', q: 'Який список краще обрати для кроків інструкції, де важливий порядок дій?', o: ['Маркований', 'Нумерований', 'Без списку', 'Багаторівневий'], a: 1, e: 'Нумерація показує послідовність. Маркери — коли порядок неважливий.' },
-    { t: 'o', q: 'Розташуйте дії для створення багаторівневого списку у правильному порядку:', o: ['Набрати пункти списку, кожен з нового рядка', 'Виділити ці пункти', 'Обрати «Багаторівневий список» на вкладці «Основне»', 'Для підпунктів натиснути Tab'], e: 'Спочатку текст, потім виділення, вибір типу списку й налаштування рівнів.' }
-  ]},
-  { ic: '∑', n: 'Секретні символи', topic: 'Спеціальні символи і формули', tip: 'Повторіть вставлення символів (Вставлення → Символ) та редактор формул (Alt + =).', q: [
-    { t: 's', q: 'Як вставити символ ©, якого немає на клавіатурі?', o: ['Вставлення → Символ', 'Основне → Шрифт', 'Макет → Поля', 'Рецензування → Орфографія'], a: 0, e: 'Вкладка «Вставлення» → «Символ» відкриває таблицю спеціальних символів.' },
-    { t: 's', q: 'Де в Word створюється математична формула?', o: ['Вставлення → Формула', 'Конструктор → Тема', 'Вигляд → Масштаб', 'Файл → Друк'], a: 0, e: 'Вставлення → Формула (або Alt + =) відкриває редактор формул.' },
-    { t: 'm', q: 'Які з цих знаків є спеціальними символами? (оберіть усі правильні)', o: ['©', '≈', 'abc', '€'], a: [0, 1, 3], e: '©, ≈ і € вставляють через таблицю символів, а abc — звичайні літери.' }
-  ]},
-  { ic: '📰', n: 'Колонки та розділи', topic: 'Стовпці та розділи', tip: 'Повторіть: Макет → Стовпці та різні види розривів розділу (безперервний, з наступної сторінки).', q: [
-    { t: 's', q: 'Де знаходиться команда «Стовпці» для розбиття тексту на колонки?', o: ['Вкладка «Макет» (Розмітка сторінки)', 'Вкладка «Рецензування»', 'Вкладка «Вигляд»', 'Вкладка «Файл»'], a: 0, e: 'Макет → Стовпці: обираєте 2, 3 або власну кількість колонок.' },
-    { t: 's', q: 'Потрібно, щоб на одній сторінці заголовок був в одній колонці, а текст під ним — у двох. Що зробити?', o: ['Вставити таблицю', 'Вставити безперервний розрив розділу й лише для другого розділу задати два стовпці', 'Зменшити шрифт', 'Зробити два файли'], a: 1, e: 'Кожен розділ має власні налаштування стовпців. Безперервний розрив лишає їх на одній сторінці.' },
-    { t: 's', q: 'Для чого потрібен розрив розділу «Наступна сторінка»?', o: ['Щоб видалити текст', 'Щоб новий розділ починався з нової сторінки і мав власні параметри (орієнтація, колонтитули)', 'Щоб збільшити шрифт', 'Щоб додати малюнок'], a: 1, e: 'Такий розрив створює новий розділ з нової сторінки — зручно змінити орієнтацію чи колонтитули.' }
-  ]},
-  { ic: '🔖', n: 'Верх і низ сторінки', topic: 'Колонтитули', tip: 'Повторіть: двічі клацнути в полі сторінки, номер сторінки, особливий колонтитул першої сторінки.', q: [
-    { t: 's', q: 'Що таке колонтитул?', o: ['Заголовок першого рівня', 'Текст чи об’єкт у верхньому або нижньому полі, що повторюється на сторінках', 'Вид списку', 'Тип розриву'], a: 1, e: 'Колонтитул — повторювана інформація у верхньому чи нижньому полі: назва, автор, номер сторінки.' },
-    { t: 's', q: 'Як додати нумерацію сторінок?', o: ['Вставлення → Номер сторінки', 'Макет → Орієнтація', 'Основне → Маркери', 'Вигляд → Лінійка'], a: 0, e: 'Вставлення → Номер сторінки (угорі, внизу, на полях).' },
-    { t: 's', q: 'Як зробити, щоб на титульній сторінці не було колонтитула?', o: ['Видалити титульну сторінку', 'Увімкнути «Особливий колонтитул для першої сторінки»', 'Змінити колір тексту на білий', 'Вставити розрив рядка'], a: 1, e: 'У вкладці «Колонтитули» (Конструктор) є прапорець «Особливий колонтитул для першої сторінки».' }
-  ]},
-  { ic: '🗺️', n: 'Створення змісту', bonus: 1, topic: 'Зміст документа', tip: 'Повторіть: заголовки зі стилями «Заголовок 1/2», Посилання → Зміст, оновлення змісту після правок.', q: [
-    { t: 's', q: 'Що потрібно зробити із заголовками, щоб Word міг автоматично створити зміст?', o: ['Зробити їх жирними', 'Застосувати стилі «Заголовок 1», «Заголовок 2» тощо', 'Написати їх великими літерами', 'Підкреслити'], a: 1, e: 'Автозміст будується за стилями заголовків. Просто жирний текст Word заголовком не вважає.' },
-    { t: 's', q: 'Де знаходиться команда «Зміст»?', o: ['Вкладка «Посилання» → Зміст', 'Вкладка «Вставлення» → Таблиця', 'Вкладка «Вигляд» → Масштаб', 'Вкладка «Рецензування» → Коментар'], a: 0, e: 'Посилання → Зміст — готові стилі та «Настроюваний зміст».' },
-    { t: 'o', q: 'Розташуйте дії для створення змісту у правильному порядку:', o: ['Оформити заголовки стилями «Заголовок 1/2»', 'Поставити курсор у місце, де буде зміст', 'Посилання → Зміст і обрати вигляд', 'Після правок документа натиснути «Оновити таблицю»'], e: 'Спочатку структура (стилі), потім вставлення змісту, а після змін — оновлення.' },
-    { t: 'm', q: 'Що з цього можна зробити зі змістом після вставлення в документ? (оберіть усі правильні)', o: ['Видалити і створити нову версію', 'Змінити його вигляд через інші стилі', 'Оновити його, щоб урахунок нові заголовки', 'Автоматично видаляти при збереженні документа'], a: [0, 1, 2], e: 'Зміст легко видалити й вставити заново, змінити його оформлення через стилі й оновити при правках. Він не видаляється сам.' }
-  ]}
+const $=s=>document.querySelector(s);
+const stages=[
+{id:'doc1',name:'Рівень 1. Системи опрацювання текстів',short:'Визнач інструмент для роботи з документом',word:'інструмент',title:'Системи опрацювання текстів',story:'Обери програму й формат, що відповідають завданню.',questions:[
+{q:'Яка програма дає змогу кільком людям одночасно редагувати документ у браузері?',options:['Блокнот','Google Документи','Paint','Калькулятор'],a:1,explain:'Google Документи підтримують спільне онлайн-редагування.'},
+{q:'Яке розширення зазвичай має сучасний документ Microsoft Word?',options:['.txt','.docx','.xlsx','.pptx'],a:1,explain:'.docx — документ Word; .xlsx — електронна таблиця, .pptx — презентація.'},
+{q:'Що вміє текстовий процесор, але не простий Блокнот?',options:['Зберігати текст у файл','Вставляти таблиці та зображення','Відкривати текстовий файл','Вводити літери'],a:1,explain:'Текстовий процесор дає змогу форматувати текст і працювати з об’єктами.'},
+{q:'Яка програма призначена передусім для створення простого тексту без складного форматування?',options:['Блокнот','PowerPoint','Excel','Paint'],a:0,explain:'Блокнот призначений для простого неформатованого тексту.'},
+{q:'Що найкраще описує текстовий процесор?',options:['Програма лише для малювання','Програма для створення, редагування й форматування документів','Пристрій для друку','Сервіс лише для обчислень'],a:1,explain:'Текстовий процесор поєднує введення, редагування, форматування та роботу з об’єктами документа.'}
+]},
+{id:'doc2',name:'Рівень 2. Багаторівневі списки',short:'Упорядкуй пункти й підпункти',word:'список',title:'Багаторівневі списки',story:'Створи логічну структуру для інструкції або плану.',questions:[
+{q:'Який тип списку найкраще підходить для кроків інструкції, де важлива послідовність?',options:['Маркований','Нумерований','Без списку','Алфавітний покажчик'],a:1,explain:'Нумерований список показує порядок виконання кроків.'},
+{q:'Як у Word перетворити пункт списку на підпункт?',options:['Натиснути Caps Lock','Збільшити рівень списку або натиснути Tab на початку пункту','Змінити колір шрифту','Вставити колонтитул'],a:1,explain:'Tab зазвичай збільшує рівень вкладеності; Shift+Tab повертає на рівень вище.'},
+{q:'Коли доречно використовувати маркований список?',options:['Коли порядок дій обов’язковий','Коли перелічують елементи без визначеної послідовності','Лише для заголовків','Тільки для математичних формул'],a:1,explain:'Маркований список доречний, коли порядок пунктів не має значення.'},
+{q:'Який пункт є підпунктом у багаторівневому списку?',options:['Пункт із більшим рівнем вкладеності','Будь-яке слово жирним','Номер сторінки','Назва файлу'],a:0,explain:'Підпункт має глибший рівень структури й зазвичай більший відступ.'},
+{q:'Що варто зробити перед застосуванням стилю багаторівневого списку до вже набраних пунктів?',options:['Виділити потрібні пункти','Видалити документ','Змінити орієнтацію сторінки','Увімкнути режим читання'],a:0,explain:'Виділення дає змогу застосувати потрібний формат до відповідних пунктів.'}
+]},
+{id:'doc3',name:'Рівень 3. Спеціальні символи й формули',short:'Додай символи та математичні записи',word:'символ',title:'Спеціальні символи й формули',story:'Використовуй спеціальні засоби вставлення, а не випадкові заміни.',questions:[
+{q:'Де у Word знайти вставлення символу ©?',options:['Основне → Абзац','Вставлення → Символ','Макет → Поля','Рецензування → Мова'],a:1,explain:'У меню Вставлення → Символ можна вибрати спеціальний знак.'},
+{q:'Яка команда призначена для створення математичної формули у Word?',options:['Вставлення → Формула','Вигляд → Масштаб','Файл → Друк','Основне → Маркери'],a:0,explain:'Команда «Формула» відкриває редактор математичних виразів.'},
+{q:'Який із наведених знаків є спеціальним символом, який часто вставляють через таблицю символів?',options:['слово','©','abc','привіт'],a:1,explain:'© — спеціальний знак; звичайні літери вводять із клавіатури.'},
+{q:'Яке сполучення клавіш у Word часто відкриває поле для введення формули?',options:['Ctrl + P','Alt + =','Ctrl + S','Shift + Enter'],a:1,explain:'У багатьох версіях Word Alt + = створює поле формули.'},
+{q:'Чому не варто складати складну формулу лише з тексту й пробілів?',options:['Пробіли заборонені в документах','Вирівнювання може зламатися після редагування або зміни шрифту','Формули не можна друкувати','Текстовий процесор видалить усі цифри'],a:1,explain:'Редактор формул зберігає структуру дробів, індексів і математичних знаків.'}
+]},
+{id:'doc4',name:'Рівень 4. Стовпці та розділи',short:'Налаштуй макет документа',word:'макет',title:'Стовпці та розділи',story:'Керуй колонками та параметрами окремих частин документа.',questions:[
+{q:'Де у Word зазвичай розміщена команда «Стовпці»?',options:['Макет','Рецензування','Вигляд','Файл → Обліковий запис'],a:0,explain:'На вкладці «Макет» можна налаштувати кількість стовпців.'},
+{q:'Потрібно зробити заголовок на всю ширину сторінки, а текст нижче — у дві колонки. Що найкраще використати?',options:['Змінити колір заголовка','Безперервний розрив розділу перед текстом у колонках','Створити два окремі файли','Збільшити поля до максимуму'],a:1,explain:'Розрив розділу дає змогу застосувати інші параметри макета до наступної частини.'},
+{q:'Для чого потрібен розрив розділу «З наступної сторінки»?',options:['Щоб видалити сторінку','Щоб почати новий розділ з нової сторінки й змінити його параметри','Щоб вставити символ','Щоб автоматично виправити орфографію'],a:1,explain:'Новий розділ може мати власну орієнтацію, колонтитули та інші параметри.'},
+{q:'Який розрив доречно використати, щоб змінити кількість стовпців посеред сторінки?',options:['Розрив рядка','Безперервний розрив розділу','Кінець документа','Розрив сторінки завжди'],a:1,explain:'Безперервний розрив розділу дає змогу змінити форматування без переходу на нову сторінку.'},
+{q:'Якщо лише одна сторінка документа має бути альбомною, що допоможе ізолювати ці налаштування?',options:['Розриви розділів до й після цієї сторінки','Зміна кольору сторінки','Збільшення міжрядкового інтервалу','Маркований список'],a:0,explain:'Окремий розділ дає змогу встановити альбомну орієнтацію лише для потрібної частини документа.'}
+]},
+{id:'doc5',name:'Рівень 5. Колонтитули й нумерація',short:'Оформи верхні та нижні поля',word:'колонтитул',title:'Колонтитули й нумерація',story:'Додай повторювану інформацію й номери сторінок.',questions:[
+{q:'Що таке колонтитул?',options:['Назва стилю списку','Текст або об’єкт у верхньому чи нижньому полі сторінки','Спеціальний символ','Розрив абзацу'],a:1,explain:'Колонтитули містять повторювану інформацію: назву, автора, дату чи номер сторінки.'},
+{q:'Де зазвичай додають номери сторінок у Word?',options:['Вставлення → Номер сторінки','Макет → Стовпці','Основне → Замінити','Рецензування → Коментар'],a:0,explain:'Команда «Номер сторінки» розташована на вкладці «Вставлення».'},
+{q:'Як прибрати колонтитул лише з титульної сторінки?',options:['Зробити текст білим','Увімкнути «Особливий колонтитул для першої сторінки»','Видалити титульну сторінку','Змінити формат файлу на .txt'],a:1,explain:'Спеціальна настройка першої сторінки дає змогу не показувати на ній звичайний колонтитул.'},
+{q:'Яка інформація найдоречніша в нижньому колонтитулі великого звіту?',options:['Номер сторінки','Усі відповіді тесту','Випадковий набір символів','Повний текст кожного розділу'],a:0,explain:'Номер сторінки допомагає орієнтуватися в багатосторінковому документі.'},
+{q:'Якщо змінити звичайний колонтитул, що часто відбувається в межах одного розділу?',options:['Він може оновитися на всіх сторінках цього розділу','Зміниться розширення файлу','Видаляться всі зображення','Документ автоматично закриється'],a:0,explain:'Колонтитули зазвичай повторюються на сторінках розділу, якщо не задано винятків.'}
+]},
+{id:'doc6',name:'Рівень 6. Автоматичний зміст',short:'Створи навігацію документом',word:'зміст',title:'Автоматичний зміст',story:'Застосуй стилі заголовків і сформуй зміст, який можна оновлювати.',questions:[
+{q:'Що потрібно зробити із заголовками, щоб Word міг автоматично створити зміст?',options:['Зробити всі літери великими','Застосувати стилі «Заголовок 1», «Заголовок 2» тощо','Лише підкреслити текст','Вирівняти заголовки по центру'],a:1,explain:'Автоматичний зміст будується за структурними стилями заголовків.'},
+{q:'Де у Word зазвичай розташована команда автоматичного змісту?',options:['Посилання → Зміст','Вставлення → Фігури','Вигляд → Масштаб','Рецензування → Переклад'],a:0,explain:'На вкладці «Посилання» розміщено команду вставлення змісту.'},
+{q:'Що потрібно зробити після зміни заголовків або сторінок, щоб зміст відповідав документу?',options:['Нічого — зміст завжди оновлюється сам','Оновити таблицю змісту','Перейменувати файл','Змінити колір сторінки'],a:1,explain:'Після редагування документа потрібно оновити зміст.'},
+{q:'Чому недостатньо просто зробити заголовок жирним для автоматичного змісту?',options:['Жирний текст не обов’язково має стиль структурного заголовка','Word не підтримує жирний шрифт','Зміст містить лише зображення','Жирний шрифт блокує друк'],a:0,explain:'Візуальне форматування саме по собі не завжди задає структурний рівень заголовка.'},
+{q:'Що зазвичай містить автоматичний зміст?',options:['Заголовки документа та відповідні номери сторінок','Усі слова документа без винятку','Лише зображення','Історію всіх збережень файлу'],a:0,explain:'Зміст відображає структуру документа й допомагає перейти до потрібного розділу.'}
+]}
 ];
+let state={name:'',cls:'',stage:0,answers:[],scores:[],clues:[],hintUsed:[],started:false,finished:false,finalInputs:{}};
+const KEY='mission-document-quest-v1';
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){return null}}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function shell(content){$('#app').innerHTML=content}
+function home(){const old=load();shell(`<section class="card hero"><span class="tag">Інтерактивний навчальний квест</span><div class="hero-art" aria-label="100 відсотків — текстові документи"><div class="doc-icon" aria-hidden="true"><i></i><i></i><i></i></div><div class="hero-meter"><div class="hero-percent">Місія "Опрацювання текстових даних"</div><div class="hero-caption"><br></div><div class="hero-track"><i></i></div></div></div><p class="muted">Допоможи підготувати якісний текстовий документ. Пройди 6 рівнів і 30 запитань, збери ключові слова та доведи, що вмієш працювати зі списками, формулами, макетом, колонтитулами й змістом.</p><div class="grid"><div class="stat"><b>6 рівнів</b><span class="muted">від текстового редактора до автоматичного змісту</span></div><div class="stat"><b>30 запитань</b><span class="muted">по 5 на рівень</span></div><div class="stat"><b>80% правильних</b><span class="muted">потрібно для ключа</span></div></div><div class="mission-banner"><b>Правило місії:</b> щоб отримати ключ рівня, потрібно правильно відповісти щонайменше на 4 із 5 запитань. Якщо результат нижчий за 80%, ключ не видається. Наприкінці заповни пропуски у фінальному реченні.</div><label for="nm">Ім’я та прізвище</label><input id="nm" placeholder="Наприклад, Марія Заньковецька" autocomplete="name"><label for="cl">Клас</label><input id="cl" placeholder="Наприклад, 9-А"><div id="err" class="feedback bad hidden"></div><div class="actions"><button class="btn" id="start">Почати квест</button>${old&&old.started?'<button class="btn secondary" id="resume">Продовжити збережений прогрес</button>':''}</div></section>`);$('#start').onclick=()=>{const n=$('#nm').value.trim(),c=$('#cl').value.trim();if(!n||!c){$('#err').textContent='Заповни ім’я та клас, щоб почати.';$('#err').classList.remove('hidden');return}state={name:n,cls:c,stage:0,answers:[],scores:[],clues:[],hintUsed:[],started:true,finished:false,finalInputs:{}};save();renderStage()};if($('#resume'))$('#resume').onclick=()=>{state=old;renderStage()}}
+function topbar(){const complete=state.scores.filter(x=>x!==undefined).length;return `<div class="progress-top"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><b>${esc(state.name)} · ${esc(state.cls)}</b><span class="muted">${state.stage<stages.length?'Рівень '+(state.stage+1)+' з 6':'Фінальне завдання'}</span></div><div class="progress-line"><i style="width:${complete/6*100}%"></i></div><div class="muted" style="font-size:.82rem;margin-top:6px">Завершено рівнів: ${complete} із 6</div></div>`}
+function stageNav(){return `<div class="stage-list">${stages.map((s,i)=>{const done=state.scores[i]!==undefined,active=i===state.stage;return `<div class="stage ${done?'done':''} ${active?'active':''}"><div class="num">${done?(state.clues[i]?'✓':'×'):i+1}</div><div><b>${s.name}</b><small>${s.short}</small></div><span class="status">${done?(state.clues[i]?'Ключ отримано':'Ключ не отримано'):active?'Поточний':'Попереду'}</span></div>`}).join('')}</div>`}
+function renderStage(){if(state.stage>=stages.length){finalTask();return}const s=stages[state.stage];if(!state.answers[state.stage])state.answers[state.stage]=Array(5).fill(null);const answers=state.answers[state.stage];const finished=answers.every(x=>x!==null);shell(topbar()+`<section class="card"><span class="tag">${s.name}</span><h2 style="margin-top:14px">${s.title}</h2><p class="muted">${s.story}</p>${s.table?`<table class="data-table"><thead><tr><th>Варіант заходу</th><th>Кількість голосів</th></tr></thead><tbody>${s.table.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table>`:''}<div class="mission-banner"><b>Умова отримання ключа</b><p style="margin:5px 0 0">Дай щонайменше 4 правильні відповіді з 5 (80%). Ключ відкриється лише після завершення всіх запитань рівня.</p></div><div id="questions">${s.questions.map((q,qi)=>`<div class="topic-row"><p class="q">${qi+1}. ${q.q}</p><div class="opts">${q.options.map((o,oi)=>`<button class="opt ${answers[qi]!==null?(oi===q.a?'correct':oi===answers[qi]?'wrong':''):''}" data-q="${qi}" data-i="${oi}" ${answers[qi]!==null?'disabled':''}>${o}</button>`).join('')}</div><div class="feedback ${answers[qi]===null?'hidden':answers[qi]===q.a?'':'bad'}" id="fb${qi}" ${answers[qi]===null?'':'style="display:block"'}>${answers[qi]===null?'':esc(q.explain)}</div></div>`).join('')}</div><div class="actions"><button class="btn secondary" id="hintBtn">Підказка</button><button class="btn hidden" id="finishLevel">Перевірити рівень</button><button class="btn secondary" id="mapBtn">Карта квесту</button></div><div id="hint" class="hint hidden">${esc(s.questions[0].explain)}</div><div id="levelResult"></div></section><section class="card"><h3>Зібрані ключі документа</h3><p class="muted">Ключ видається лише за результату 80% або більше.</p><div>${stages.map((x,i)=>`<span class="codeword">${state.clues[i]?esc(state.clues[i].toUpperCase()):'?'}</span>`).join('')}</div></section><div id="navMap" class="card hidden"><h3>Карта квесту</h3>${stageNav()}</div>`);$('#questions').querySelectorAll('.opt:not(:disabled)').forEach(b=>b.onclick=()=>answer(+b.dataset.q,+b.dataset.i));$('#hintBtn').onclick=()=>{const h=$('#hint');h.classList.toggle('hidden');if(!state.hintUsed.includes(state.stage)){state.hintUsed.push(state.stage);save()}};$('#mapBtn').onclick=()=>$('#navMap').classList.toggle('hidden');if(finished)showLevelResult();}
+function answer(qi,oi){const s=stages[state.stage],q=s.questions[qi],answers=state.answers[state.stage];answers[qi]=oi;const buttons=[...$('#questions').querySelectorAll(`[data-q="${qi}"]`)];buttons.forEach(b=>{b.disabled=true;const i=+b.dataset.i;if(i===q.a)b.classList.add('correct');else if(i===oi)b.classList.add('wrong')});const fb=$('#fb'+qi);fb.className='feedback'+(oi===q.a?'':' bad');fb.textContent=(oi===q.a?'Правильно. ':'Не зовсім. ')+q.explain;save();if(answers.every(x=>x!==null))showLevelResult()}
+function showLevelResult(){const s=stages[state.stage],answers=state.answers[state.stage],score=answers.filter((x,i)=>x===s.questions[i].a).length;state.scores[state.stage]=score;const passed=score>=4;state.clues[state.stage]=passed?s.word:'';save();const box=$('#levelResult');box.innerHTML=`<div class="feedback ${passed?'':'bad'}"><b>${passed?'Рівень пройдено — ключ отримано!':'Поріг 80% не досягнуто — ключ не отримано.'}</b><p style="margin:7px 0">Результат: ${score} з 5 (${score*20}%). ${passed?'Твоє ключове слово:':'Потрібно було правильно відповісти щонайменше на 4 запитання. Ключове слово'} <span class="codeword">${passed?esc(s.word.toUpperCase()):'ЗАКРИТО'}</span></p><button class="btn" id="nextLevel">${state.stage===stages.length-1?'Перейти до фінального речення':'Наступний рівень'}</button></div>`;$('#nextLevel').onclick=()=>{state.stage++;save();renderStage();window.scrollTo({ top: 0, behavior: 'smooth' });};$('#finishLevel').classList.add('hidden');}
+function finalTask(){const parts=[['Обери правильний ','інструмент',', '],['структуруй ','список',', '],['встав потрібний ','символ',', '],['налаштуй ','макет',', '],['додай ','колонтитул',' і створи '],['','зміст','.']];shell(topbar()+`<section class="card"><span class="tag">Фінальне завдання</span><h1 style="margin-top:14px">Заверши місію з документом</h1><p class="muted">Слова, за які ти отримав ключі, уже відкриті. Для кожного пропущеного ключа введи правильне слово. Коли речення буде правильним, місію завершено.</p><div class="mission-banner"><p style="font-size:1.12rem;line-height:2.4;margin:0">${parts.map((p,i)=>{const key=p[1],idx=stages.findIndex(s=>s.word===key),got=!!state.clues[idx];const input=got?`<b class="codeword">${esc(key)}</b>`:`<input aria-label="Введи слово ${key}" id="word${i}" value="${esc(state.finalInputs[i]||'')}" placeholder="?" style="display:inline-block;width:140px;max-width:40vw;padding:7px 9px;margin:0 4px">`;return `${p[0]}${input}${p[2]}`}).join('')}</p></div><div id="finalFeedback" class="hidden"></div><div class="actions"><button class="btn" id="checkFinal">Перевірити речення</button><button class="btn secondary" id="mapBtn">Карта квесту</button></div><div id="navMap" class="card hidden"><h3>Карта квесту</h3>${stageNav()}</div></section>`);parts.forEach((p,i)=>{const el=$('#word'+i);if(el)el.oninput=()=>{state.finalInputs[i]=el.value;save()}});$('#checkFinal').onclick=()=>{let ok=true;parts.forEach((p,i)=>{const idx=stages.findIndex(s=>s.word===p[1]);if(state.clues[idx])return;const el=$('#word'+i);const val=(el.value||'').trim().toLocaleLowerCase('uk-UA').replace(/[.,!?:;]/g,'');if(val!==p[1]){ok=false;el.style.borderColor='var(--red)'}else el.style.borderColor='var(--green)'});const f=$('#finalFeedback');f.classList.remove('hidden');if(ok){state.finished=true;save();f.className='feedback';f.innerHTML='<b>Речення складено правильно!</b> Ти завершив квест і продемонстрував знання інструментів опрацювання текстових документів.<br><button class="btn" id="showReport">Показати звіт</button>';$('#showReport').onclick=report}else{f.className='feedback bad';f.textContent='Ще не все правильно. Перевір пропущені слова та спробуй знову.'}};$('#mapBtn').onclick=()=>$('#navMap').classList.toggle('hidden')}
+function grade12(p){return p>=95?12:p>=90?11:p>=85?10:p>=80?9:p>=75?8:p>=70?7:p>=60?6:p>=50?5:p>=40?4:p>=30?3:p>=20?2:1}
+function report(){const earned=state.clues.filter(Boolean).length,total=state.scores.reduce((a,b)=>a+(b||0),0);shell(topbar()+`<section class="card"><span class="tag">Місію завершено</span><h1 style="margin-top:16px">Вітаємо, ${esc(state.name)}!</h1><p class="muted">Ти пройшов квест «Документ».</p><div class="result-score">${grade12(Math.round(total/30*100))}<small> / 12 балів</small></div><p class="muted" style="text-align:center">${Math.round(total/30*100)}% правильних відповідей · ${total} із 30</p><div class="mission-banner"><b>Оцінювання:</b> 12 балів — 95–100%; 10–11 — 85–94%; 7–9 — 70–84%; 4–6 — 40–69%; 1–3 — менше 40%.</div><p class="muted">Ключів отримано: ${earned} із 6. Використано підказок: ${state.hintUsed.length}.</p><div class="mission-banner"><h2>Навички, які ти перевірив</h2><p>Обери правильний <b>інструмент</b>, структуруй <b>список</b>, встав потрібний <b>символ</b>, налаштуй <b>макет</b>, додай <b>колонтитул</b> і створи <b>зміст</b>.</p></div><h2>Результати за темами</h2>${stages.map((s,i)=>`<div class="topic-row"><b>${s.name}</b><div class="muted">${state.scores[i]??0} з 5 (${(state.scores[i]??0)*20}%) · ${state.clues[i]?'Ключ отримано: '+esc(state.clues[i]):'Ключ не отримано'}</div><div class="bar"><i style="width:${(state.scores[i]??0)*20}%"></i></div></div>`).join('')}<div class="actions"><button class="btn" id="again">Пройти ще раз</button><button class="btn secondary" id="print">Друкувати / зберегти PDF</button></div></section>`);$('#again').onclick=()=>{localStorage.removeItem(KEY);state={name:'',cls:'',stage:0,answers:[],scores:[],clues:[],hintUsed:[],started:false,finished:false,finalInputs:{}};home()};$('#print').onclick=()=>window.print()}
+home();
 
-let S = { name: '', xp: 0, streak: 0, best: 0, done: [], res: [], cur: 0, qi: 0, miss: [] };
-
-function headerStats() {
-  return `<div class="flex items-center justify-between mb-4 pb-3 border-b border-zinc-100">
-    <span class="text-xs font-semibold text-zinc-500"><i class="fa-solid fa-user mr-1"></i> ${esc(S.name)}</span>
-    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-200">
-      <i class="fa-solid fa-star text-[10px]"></i> ${S.xp} XP
-    </span>
-  </div>`;
-}
-
-function start() {
-  const app = $('#app');
-  app.innerHTML = `<div class="clean-card p-6 sm:p-8">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 text-xs font-semibold mb-4">
-      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> 9 клас · Інформатика
-    </div>
-    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900 mb-2">Місія: Документ</h1>
-    <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-      Пройдіть інтерактивні місії з теми «Опрацювання текстових даних». Перевірте свої знання та отримайте підсумковий звіт.
-    </p>
-    <div class="space-y-4">
-      <div>
-        <label for="nm" class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">Ваше ім’я та клас:</label>
-        <input id="nm" type="text" maxlength="40" placeholder="Наприклад: Тарас Шевченко, 9-А" 
-               class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm font-medium text-zinc-900 focus:outline-none focus:bg-white focus:border-zinc-400 transition-all">
-      </div>
-      <button class="btn-action w-full py-3 text-sm flex items-center justify-center gap-2 shadow-sm" id="go">
-        Почати місії <i class="fa-solid fa-arrow-right text-xs"></i>
-      </button>
-    </div>
-  </div>`;
-
-  const go = () => { S.name = $('#nm').value.trim(); if (!S.name) { $('#nm').focus(); return; } map(); };
-  $('#go').onclick = go; $('#nm').onkeydown = e => { if (e.key === 'Enter') go(); };
-}
-
-function map() {
-  const n = S.done.length, all = n === M.length;
-  const app = $('#app');
-  app.innerHTML = headerStats() + `<div class="clean-card p-6">
-    <div class="flex items-center justify-between mb-2">
-      <h2 class="text-lg font-bold text-zinc-900">Карта місій</h2>
-      <span class="text-xs font-semibold text-zinc-400">${n} з ${M.length}</span>
-    </div>
-    <div class="bar-bg mb-6"><div class="bar-fill" style="width:${(n / M.length) * 100}%"></div></div>
-    
-    <div class="space-y-2.5">` +
-    M.map((m, i) => {
-      const d = S.done.includes(i), lock = !d && i > S.done.length;
-      const r = S.res[i];
-      return `<button class="mis-btn w-full text-left p-3.5 rounded-xl border flex items-center justify-between transition-all ${
-        d ? 'bg-emerald-50/50 border-emerald-200' : lock ? 'bg-zinc-50 border-zinc-100 opacity-60 cursor-not-allowed' : 'bg-white border-zinc-200 hover:border-zinc-400'
-      }" data-i="${i}" ${lock || d ? 'disabled' : ''}>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-lg">
-            ${d ? '✅' : lock ? '🔒' : m.ic}
-          </div>
-          <div>
-            <h3 class="text-sm font-bold text-zinc-900 mb-0.5">${m.bonus ? 'Місія 6: ' : 'Місія ' + (i + 1) + ': '}${m.n}</h3>
-            <p class="text-xs text-zinc-400 font-normal">${d ? 'Результат: ' + r.c + ' із ' + r.t : m.topic}</p>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-zinc-300"></i>
-      </button>`;
-    }).join('') +
-    `</div>
-    ${all ? '<div class="mt-6"><button class="btn-action w-full py-3 text-sm" id="rep">Отримати підсумковий звіт</button></div>' : ''}
-  </div>`;
-
-  document.querySelectorAll('.mis-btn').forEach(b => b.onclick = () => {
-    S.cur = +b.dataset.i; S.qi = 0; S.res[S.cur] = { c: 0, t: M[S.cur].q.length }; question();
-  });
-  if (all) $('#rep').onclick = report;
-}
-
-function question() {
-  const m = M[S.cur], q = m.q[S.qi];
-  let sel = [], checked = false;
-  let items = sh(q.o.map((t, i) => ({ t, i })));
-  const app = $('#app');
-
-  app.innerHTML = headerStats() + `<div class="clean-card p-6">
-    <div class="flex items-center justify-between text-xs font-semibold text-zinc-400 mb-2">
-      <span>${m.ic} ${m.n}</span>
-      <span>Завдання ${S.qi + 1} з ${m.q.length}</span>
-    </div>
-    <div class="bar-bg mb-5"><div class="bar-fill" style="width:${(S.qi / m.q.length) * 100}%"></div></div>
-    
-    <h3 class="text-base font-bold text-zinc-900 mb-1">${esc(q.q)}</h3>
-    ${q.t === 'm' ? '<p class="text-xs text-zinc-400 italic mb-4">Можливо кілька відповідей.</p>' : ''}
-    ${q.t === 'o' ? '<p class="text-xs text-zinc-400 italic mb-4">Натискайте на кроки по черзі для побудови порядку.</p>' : '<div class="mb-2"></div>'}
-
-    <div id="qbody" class="space-y-1 mb-4"></div>
-    <div id="fb" class="mb-4"></div>
-    <div id="acts"></div>
-  </div>`;
-
-  const qbody = $('#qbody'), acts = $('#acts');
-
-  function draw() {
-    if (q.t === 'o') {
-      const pool = items.filter(x => !sel.includes(x.i));
-      qbody.innerHTML = `<div class="p-3 rounded-xl border border-dashed border-zinc-200 bg-zinc-50 min-h-[50px] mb-3 flex flex-wrap gap-1.5" id="ans">
-        ${sel.map(i => `<button class="opt-btn !w-auto !py-1.5 !px-3 !m-0 text-xs" data-r="${i}">${esc(q.o[i])}</button>`).join('') || '<span class="text-xs text-zinc-400">Ваша відповідь з’явиться тут...</span>'}
-      </div>
-      <div class="space-y-1">${pool.map(x => `<button class="opt-btn text-xs !py-2" data-a="${x.i}">${esc(x.t)}</button>`).join('')}</div>`;
-
-      qbody.querySelectorAll('[data-a]').forEach(b => b.onclick = () => { if (checked) return; sel.push(+b.dataset.a); draw(); });
-      qbody.querySelectorAll('[data-r]').forEach(b => b.onclick = () => { if (checked) return; sel = sel.filter(x => x !== +b.dataset.r); draw(); });
-      $('#chk').disabled = sel.length !== q.o.length;
-    } else {
-      qbody.innerHTML = items.map(x => `<button class="opt-btn ${sel.includes(x.i) ? 'sel' : ''}" data-i="${x.i}">${esc(x.t)}</button>`).join('');
-      qbody.querySelectorAll('.opt-btn').forEach(b => b.onclick = () => {
-        if (checked) return;
-        const i = +b.dataset.i;
-        if (q.t === 's') sel = [i]; else sel = sel.includes(i) ? sel.filter(x => x !== i) : sel.concat(i);
-        draw();
-      });
-      $('#chk').disabled = !sel.length;
-    }
-  }
-
-  acts.innerHTML = '<button class="btn-action w-full py-2.5 text-sm disabled:opacity-40" id="chk" disabled>Перевірити</button>';
-  draw();
-
-  $('#chk').onclick = () => {
-    checked = true; let ok;
-    if (q.t === 'o') ok = sel.every((v, k) => v === k);
-    else if (q.t === 's') ok = sel[0] === q.a;
-    else ok = sel.length === q.a.length && q.a.every(x => sel.includes(x));
-
-    if (q.t !== 'o') {
-      const corr = q.t === 's' ? [q.a] : q.a;
-      qbody.querySelectorAll('.opt-btn').forEach(b => {
-        const i = +b.dataset.i;
-        if (corr.includes(i)) b.classList.add('right');
-        else if (sel.includes(i)) b.classList.add('wrong');
-      });
-    } else {
-      qbody.innerHTML = `<p class="text-xs font-bold text-zinc-700 mb-1">Правильний порядок:</p><ol class="list-decimal pl-4 text-xs text-zinc-600 space-y-1">${q.o.map(t => `<li>${esc(t)}</li>`).join('')}</ol>`;
-    }
-
-    let gain = 0;
-    if (ok) {
-      S.streak++; S.best = Math.max(S.best, S.streak);
-      gain = 100 + Math.min(S.streak - 1, 5) * 20;
-      S.xp += gain; S.res[S.cur].c++;
-    } else {
-      S.streak = 0;
-      S.miss.push({ m: S.cur, q: q.q, e: q.e });
-    }
-
-    $('#fb').innerHTML = `<div class="p-3 rounded-xl text-xs leading-relaxed font-medium ${ok ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-rose-50 text-rose-800 border border-rose-200'}">
-      <b>${ok ? `Правильно! +${gain} XP` : 'Не зовсім.'}</b> ${esc(q.e)}
-    </div>`;
-
-    const last = S.qi === m.q.length - 1;
-    acts.innerHTML = `<button class="btn-action w-full py-2.5 text-sm flex items-center justify-center gap-2" id="nx">
-      ${last ? 'Завершити місію' : 'Далі'} <i class="fa-solid fa-chevron-right text-xs"></i>
-    </button>`;
-    $('#nx').focus();
-    $('#nx').onclick = () => { if (last) { S.done.push(S.cur); missionEnd(); } else { S.qi++; question(); } };
-  };
-}
-
-function missionEnd() {
-  const r = S.res[S.cur], ok = r.c === r.t;
-  const app = $('#app');
-  app.innerHTML = headerStats() + `<div class="clean-card p-6 text-center space-y-4">
-    <div class="text-4xl font-extrabold text-zinc-900">${r.c} / ${r.t}</div>
-    <div>
-      <h2 class="text-lg font-bold text-zinc-900 mb-1">${ok ? 'Місію виконано бездоганно!' : r.c >= r.t / 2 ? 'Місію виконано!' : 'Є над чим попрацювати'}</h2>
-      <p class="text-xs text-zinc-400">${M[S.cur].n}</p>
-    </div>
-    <button class="btn-action w-full py-3 text-sm" id="b">${S.done.length === M.length ? 'Перейти до звіту' : 'На карту місій'}</button>
-  </div>`;
-  $('#b').onclick = () => S.done.length === M.length ? report() : map();
-}
-
-function lvl(p) {
-  return p >= 80 ? ['bg-emerald-50 text-emerald-700 border-emerald-200', 'Засвоєно добре'] :
-         p >= 50 ? ['bg-amber-50 text-amber-700 border-amber-200', 'Потрібне повторення'] :
-                   ['bg-rose-50 text-rose-700 border-rose-200', 'Варто повторити'];
-}
-
-function report() {
-  const tot = S.res.reduce((a, r) => a + r.c, 0), all = S.res.reduce((a, r) => a + r.t, 0), p = Math.round(tot / all * 100);
-  const rank = p >= 90 ? 'Легенда документів 🏆' : p >= 70 ? 'Старший агент 🎖️' : p >= 50 ? 'Агент-практик 🛠️' : 'Курсант 🌱';
-  const rows = M.map((m, i) => ({ m, i, p: Math.round(S.res[i].c / S.res[i].t * 100) }));
-  const sorted = rows.slice().sort((a, b) => b.p - a.p);
-  const weak = rows.filter(x => x.p < 80);
-  const app = $('#app');
-
-  app.innerHTML = headerStats() + `<div class="space-y-4">
-    <div class="clean-card p-6 text-center">
-      <p class="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">${esc(S.name)} · ${new Date().toLocaleDateString('uk-UA')}</p>
-      <div class="text-5xl font-extrabold text-zinc-900 my-2">${p}%</div>
-      <p class="text-xs text-zinc-500">
-        Правильних: <b>${tot} з ${all}</b> · Ранг: <b>${rank}</b> · Серія: <b>${S.best}</b> · <b>${S.xp} XP</b>
-      </p>
-    </div>
-
-    <div class="clean-card p-6">
-      <h3 class="text-sm font-bold text-zinc-900 mb-3">Результати за темами</h3>
-      <div class="space-y-3">
-        ${rows.map(x => {
-          const l = lvl(x.p);
-          return `<div class="flex items-center justify-between p-2.5 rounded-xl border border-zinc-100 bg-zinc-50/50 text-xs">
-            <div class="flex items-center gap-2.5">
-              <span class="text-base">${x.m.ic}</span>
-              <span class="font-bold text-zinc-800">${x.m.topic}</span>
-            </div>
-            <span class="px-2 py-0.5 rounded-md border font-semibold ${l[0]}">${x.p}\% ·${l[1]}</span>
-          </div>`;
-        }).join('')}
-      </div>
-    </div>
-
-    <div class="clean-card p-6 text-xs text-zinc-600 space-y-3">
-      <h3 class="text-sm font-bold text-zinc-900">Підсумок</h3>
-      <p>💪 <b>Найкраще засвоєно:</b> ${sorted.filter(x => x.p === sorted[0].p).map(x => x.m.topic).join(', ')} (${sorted[0].p}%).</p>
-      ${weak.length ? `<p>🔁 <b>Що повторити:</b></p><ul class="list-disc pl-4 space-y-1">${weak.sort((a, b) => a.p - b.p).map(x => `<li><b>${x.m.topic}</b> — ${x.m.tip}</li>`).join('')}</ul>` : '<p>🎉 Усі теми засвоєно добре!</p>'}
-      ${S.miss.length ? `<div class="pt-2"><h4 class="font-bold text-zinc-900 mb-2">Розбір помилок:</h4><div class="space-y-2">${S.miss.map(x => `<div class="p-2.5 rounded-xl border border-rose-100 bg-rose-50/50 text-rose-900"><b>${esc(x.q)}</b><br>${esc(x.e)}</div>`).join('')}</div></div>` : ''}
-    </div>
-
-    <div class="flex flex-col sm:flex-row gap-2 noprint">
-      <button class="btn-action flex-1 py-2.5 text-xs" id="cp">Скопіювати звіт</button>
-      <button class="btn-alt flex-1 py-2.5 text-xs" id="pr">Роздрукувати</button>
-      <button class="btn-alt flex-1 py-2.5 text-xs" id="rs">Пройти знову</button>
-    </div>
-    <p id="cm" class="text-xs text-center text-emerald-600 font-semibold noprint"></p>
-  </div>`;
-
-  const txt = `Звіт: ${S.name}\nРезультат: ${tot} із ${all} (${p}%), ранг: ${rank}\n` + rows.map(x => `- ${x.m.topic}: ${x.p}% (${lvl(x.p)[1]})`).join('\n') + (weak.length ? '\nПовторити: ' + weak.map(x => x.m.topic).join(', ') : '');
-  $('#cp').onclick = () => { (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => $('#cm').textContent = 'Звіт скопійовано!').catch(() => $('#cm').textContent = 'Зробіть знімок екрана.'); };
-  $('#pr').onclick = () => window.print();
-  $('#rs').onclick = () => { S = { name: '', xp: 0, streak: 0, best: 0, done: [], res: [], cur: 0, qi: 0, miss: [] }; start(); };
-}
-
-$('#year').textContent = new Date().getFullYear();
-start();
-</script>
-</body>
-</html>
+</script></body></html>
