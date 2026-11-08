@@ -40,6 +40,29 @@ input,select,textarea{width:100%;max-width:420px;padding:12px 14px;border:1px so
 }
 @media print{body{background:white;color:#111}.card,.progress-top{box-shadow:none;background:white;color:#111;border-color:#ccc}.btn,.progress-top{display:none!important}.muted{color:#555}}
 </style>
+<style>
+/* ---------- кнопка й вікно [i] ---------- */
+.ib-info{position:fixed;top:12px;right:12px;z-index:60;width:38px;height:38px;display:grid;place-items:center;padding:0;border-radius:50%;border:1px solid #2b2b2b;background:#121212;color:#3b82f6;font:700 16px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:border-color .15s,transform .15s}
+.ib-info:hover{border-color:#3b82f6;transform:translateY(-1px)}
+.ib-info:focus-visible{outline:2px solid #3b82f6;outline-offset:2px}
+.info-dlg{width:min(470px,calc(100vw - 24px));max-height:calc(100dvh - 40px);overflow:auto;padding:20px 22px;border:1px solid #2b2b2b;border-radius:18px;background:#121212;color:#e5e5e5;box-shadow:0 24px 60px rgba(0,0,0,.5);line-height:1.5;font-size:15px}
+.info-dlg::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(3px)}
+.info-dlg .dh{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+.info-dlg h2{margin:0;font-size:19px;color:#fff}
+.info-dlg h3{margin:16px 0 6px;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#a3a3a3}
+.info-dlg p{margin:8px 0}
+.info-dlg ul{margin:0;padding-left:20px;list-style:disc}
+.info-dlg li{margin:3px 0}
+.info-dlg .x{width:32px;height:32px;flex:none;border-radius:50%;border:1px solid #2b2b2b;background:transparent;color:#a3a3a3;font-size:15px;cursor:pointer}
+.info-dlg .x:hover{color:#e5e5e5;border-color:#3b82f6}
+.info-dlg kbd{display:inline-block;min-width:24px;padding:1px 7px;text-align:center;font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid #2b2b2b;border-bottom-width:3px;border-radius:7px;background:#171717}
+.info-dlg .gh{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 15px;border-radius:11px;background:#3b82f6;color:#ffffff;font-weight:750;text-decoration:none}
+.info-dlg .gh svg{width:17px;height:17px;fill:currentColor}
+.info-dlg .gh:hover{filter:brightness(1.08)}
+.info-dlg .ai{margin:14px 0 0;font-size:12px;color:#a3a3a3}
+@media(max-width:960px){#app{padding-top:58px}.progress-top{padding-right:56px}}
+@media print{.ib-info{display:none!important}}
+</style>
 </head>
 <body><main id="app"></main>
 <script>
@@ -122,4 +145,23 @@ function grade12(p){return p>=95?12:p>=90?11:p>=85?10:p>=80?9:p>=75?8:p>=70?7:p>
 function report(){HC.stop();const earned=state.clues.filter(Boolean).length,total=state.scores.reduce((a,b)=>a+(b||0),0);shell(topbar()+`<section class="card"><span class="tag">Місію завершено</span><h1 style="margin-top:16px">Вітаємо, ${esc(state.name)}!</h1><p class="muted">Ти пройшов квест «Документ».</p><div class="result-score">${grade12(Math.round(total/30*100))}<small> / 12 балів</small></div><p class="muted" style="text-align:center">${Math.round(total/30*100)}% правильних відповідей · ${total} із 30</p><div class="mission-banner"><b>Оцінювання:</b> 12 балів — 95–100%; 10–11 — 85–94%; 7–9 — 70–84%; 4–6 — 40–69%; 1–3 — менше 40%.</div><p class="muted">Ключів отримано: ${earned} із 6. Використано підказок: ${state.hintUsed.length}.</p>${HC.html()}<div class="mission-banner"><h2>Навички, які ти перевірив</h2><p>Обери правильний <b>інструмент</b>, структуруй <b>список</b>, встав потрібний <b>символ</b>, налаштуй <b>макет</b>, додай <b>колонтитул</b> і створи <b>зміст</b>.</p></div><h2>Результати за темами</h2>${stages.map((s,i)=>`<div class="topic-row"><b>${s.name}</b><div class="muted">${state.scores[i]??0} з 5 (${(state.scores[i]??0)*20}%) · ${state.clues[i]?'Ключ отримано: '+esc(state.clues[i]):'Ключ не отримано'}</div><div class="bar"><i style="width:${(state.scores[i]??0)*20}%"></i></div></div>`).join('')}<div class="actions"><button class="btn" id="again">Пройти ще раз</button><button class="btn secondary" id="print">Друкувати / зберегти PDF</button></div></section>`);$('#again').onclick=()=>{localStorage.removeItem(KEY);HC.reset();state={name:'',cls:'',stage:0,answers:[],scores:[],clues:[],hintUsed:[],started:false,finished:false,finalInputs:{}};home()};$('#print').onclick=()=>window.print()}
 home();
 
-</script></body></html>
+</script><button class="ib-info" id="infoBtn" type="button" aria-label="Про квест" aria-haspopup="dialog" title="Про квест">i</button>
+<dialog class="info-dlg" id="infoDlg" aria-labelledby="infoTitle">
+  <div class="dh"><h2 id="infoTitle">Місія «Документ»</h2><button class="x" type="button" id="infoClose" aria-label="Закрити">✕</button></div>
+  <p>Навчальний квест з теми «Опрацювання текстових даних»: списки, формули, макет сторінки, колонтитули й зміст.</p>
+  <h3>Правила</h3>
+  <ul><li>6 рівнів по 5 запитань.</li><li>Щонайменше 4 правильні відповіді з 5 (80%) відкривають ключове слово рівня.</li><li>На кожному рівні є підказка; кількість використаних підказок видно у звіті.</li><li>Фінал — склади з ключових слів підсумкове речення.</li><li>Наприкінці — оцінка з 12 і звіт для вчителя.</li><li>Під час проходження фіксуються виходи зі сторінки та спроби відкрити Google Лінзу — це потрапляє у звіт.</li></ul>
+  <h3>Керування</h3>
+  <ul><li>Миша або дотик — обрати відповідь і натискати кнопки.</li><li>«Карта квесту» показує всі рівні й твій прогрес.</li></ul>
+  <a class="gh" href="https://github.com/whyuxavier/text-document-quest" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>GitHub</a>
+  <p class="ai">Сайт створено за допомогою ШІ.</p>
+</dialog>
+<script>
+(()=>{const d=document.getElementById('infoDlg'),b=document.getElementById('infoBtn');
+const open=()=>{if(d.open)return;if(d.showModal)d.showModal();else d.setAttribute('open','')};
+const close=()=>{if(d.close)d.close();else d.removeAttribute('open')};
+b.addEventListener('click',open);document.getElementById('infoClose').addEventListener('click',close);
+d.addEventListener('click',e=>{if(e.target===d)close()});
+d.addEventListener('close',()=>b.focus());})();
+</script>
+</body></html>
